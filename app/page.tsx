@@ -1,5 +1,10 @@
+import { Hero, Featured } from "./_components";
+
 export default function Home() {
     return (
-        <div>This is the CCSLY</div>
+        <div>
+            <Hero />
+            <Featured />
+        </div>
     );
 }

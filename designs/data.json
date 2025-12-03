@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Modern Card Design",
+    "description": "A sleek and modern card component with hover effects and smooth transitions",
+    "image": "/images/card-design.jpg",
+    "highlighted": true,
+    "date": "2025-12-04",
+    "tags": ["component", "cards", "design"]
+  },
+  {
+    "id": 2,
+    "title": "Animated Button",
+    "description": "Interactive button with smooth animations and various states",
+    "image": "/images/button-design.jpg",
+    "highlighted": true,
+    "date": "2025-12-03",
+    "tags": ["component", "button", "animation"]
+  },
+  {
+    "id": 3,
+    "title": "Gradient Background",
+    "description": "Beautiful gradient backgrounds for websites with responsive design",
+    "image": "/images/gradient-design.jpg",
+    "highlighted": true,
+    "date": "2025-12-02",
+    "tags": ["background", "gradient", "css"]
+  },
+  {
+    "id": 4,
+    "title": "Navigation Menu",
+    "description": "Responsive navigation menu with dropdown functionality",
+    "image": "/images/nav-design.jpg",
+    "highlighted": false,
+    "date": "2025-12-01",
+    "tags": ["navigation", "menu", "responsive"]
+  },
+  {
+    "id": 5,
+    "title": "Form Validation",
+    "description": "Clean form design with validation states and error handling",
+    "image": "/images/form-design.jpg",
+    "highlighted": false,
+    "date": "2025-11-30",
+    "tags": ["form", "validation", "input"]
+  },
+  {
+    "id": 6,
+    "title": "Loading Animation",
+    "description": "Smooth loading spinner animation with multiple style options",
+    "image": "/images/loader-design.jpg",
+    "highlighted": true,
+    "date": "2025-11-29",
+    "tags": ["animation", "loading", "spinner"]
+  }
+]

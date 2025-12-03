@@ -6,7 +6,7 @@ import { FaHome, FaImages, FaLayerGroup, FaInfoCircle, FaEnvelope, FaGithub, FaL
 const Footer = () =>{
     return (
         <footer className="text-primary bg-light border-t border-t-border-light dark:text-light dark:bg-secondary dark:border-border-dark">
-            <div className="mx-auto py-12 px-8">
+            <div className="mx-auto py-12 px-8 max-w-[1400px]">
                 <div className="flex justify-around mb-10">
                     <div>
                         <h3 className="font-bold mb-4 text-xl flex items-center gap-2">Quick Links</h3>
