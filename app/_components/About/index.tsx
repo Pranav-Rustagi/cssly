@@ -18,10 +18,10 @@ const About = () => {
                         </h2>
                     </div>
                     <p className="text-lg text-primary dark:text-light opacity-80 mx-auto">
-                        CSSly is a small, focused space dedicated to exploring what can be created using only <span className="font-semibold text-decorative">HTML and CSS</span>. No shortcuts, no frameworks, no JavaScript—just the <span className="font-semibold text-decorative">fundamentals</span> pushed in unusual and unexpected directions. It's a place where simple <span className="font-semibold text-decorative">building blocks</span> turn into <span className="font-semibold text-decorative">visuals, ideas, and experiments</span> that don't always follow the rules… and that's the point.
+                        CSSly is a small, focused space dedicated to exploring what can be created using only <span className="font-semibold text-decorative dark:text-decorative-light">HTML and CSS</span>. No shortcuts, no frameworks, no JavaScript—just the <span className="font-semibold text-decorative dark:text-decorative-light">fundamentals</span> pushed in unusual and unexpected directions. It's a place where simple <span className="font-semibold text-decorative dark:text-decorative-light">building blocks</span> turn into <span className="font-semibold text-decorative dark:text-decorative-light">visuals, ideas, and experiments</span> that don't always follow the rules… and that's the point.
                         <br />
                         <br />
-                        If you're curious about what convinced a grown adult to turn stray ideas and free time into a <span className="font-semibold text-decorative">“pure CSS art lab”</span> <br /><span className="font-semibold text-decorative">(or want to know who that grown adult is)</span>, you might enjoy what's behind the button.
+                        If you're curious about what convinced a grown adult to turn stray ideas and free time into a <span className="font-semibold text-decorative dark:text-decorative-light">“pure CSS art lab”</span> <br /><span className="font-semibold text-decorative dark:text-decorative-light">(or want to know who that grown adult is)</span>, you might enjoy what's behind the button.
                     </p>
                 </div>
 
