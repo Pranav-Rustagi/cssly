@@ -15,15 +15,14 @@ interface Design {
 }
 
 const Featured = () => {
-  // Filter highlighted designs and sort by date (newest first)
   const featuredDesigns: Design[] = designsData
     .filter((design: Design) => design.highlighted)
     .sort((a: Design, b: Design) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 3); // Limit to 6 designs
+    .slice(0, 3);
 
   return (
-    <section className="w-full bg-light dark:bg-primary py-24 px-8">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full bg-light-2 dark:bg-primary-2 py-24 px-8">
+      <div className="max-w-[1400px] mx-auto px-40">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-black text-primary dark:text-light mb-4">
             Featured Designs

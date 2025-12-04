@@ -26,16 +26,16 @@ const DesignCard = ({ design }: DesignCardProps) => {
                 </div>
             </div>
 
-            <div className="p-6 py-10 flex flex-col grow">
-                <h3 className="text-2xl font-bold text-primary dark:text-light mb-2">
+            <div className="p-6 pb-10 flex flex-col grow">
+                <h3 className="text-xl font-bold text-primary dark:text-light mb-2">
                     {design.title}
                 </h3>
 
-                <p className="text-primary dark:text-light opacity-70 mb-8 text-md line-clamp-2">
+                <p className="text-primary dark:text-light opacity-70 mb-8 text-sm line-clamp-2">
                     {design.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-10 grow">
+                <div className="flex flex-wrap gap-2 mb-10">
                     {design.tags.map((tag) => (
                         <span
                             key={tag}
@@ -46,7 +46,7 @@ const DesignCard = ({ design }: DesignCardProps) => {
                     ))}
                 </div>
 
-                <Link href={`/design/${design.id}`} className="w-full">
+                <Link href={`/design/${design.id}`} className="mt-auto mr-auto">
                     <button className="flex gap-2 items-center bg-decorative text-white px-4 py-2 text-base font-bold rounded-lg cursor-pointer transition-all duration-300 hover:bg-opacity-90">
                         View Design
                         <FaArrowRight />
