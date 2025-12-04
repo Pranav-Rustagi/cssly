@@ -35,7 +35,7 @@ const Header: React.FC = () => {
         <nav className="sticky top-0 z-50 text-primary bg-light border-b border-b-border-light dark:text-light dark:bg-primary dark:border-border-dark">
             <div className="flex justify-between items-center max-w-[1400px] mx-auto py-5 px-8">
                 <div className="text-decorative font-bold text-4xl font-mono">
-                    <a href="#home">cssly</a>
+                    <a href="#home">CSSly</a>
                 </div>
                 <ul className="flex gap-8 items-center">
                     <li>

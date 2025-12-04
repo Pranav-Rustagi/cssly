@@ -21,7 +21,7 @@ const Featured = () => {
     .slice(0, 3);
 
   return (
-    <section className="w-full bg-light-2 dark:bg-primary-2 py-24 px-8">
+    <section className="w-full bg-light-2 dark:bg-primary-2 py-48 px-8">
       <div className="max-w-[1400px] mx-auto px-40">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-black text-primary dark:text-light mb-4">

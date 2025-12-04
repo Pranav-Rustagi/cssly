@@ -11,7 +11,6 @@ const Footer = () =>{
                     <div>
                         <h3 className="font-bold mb-4 text-xl flex items-center gap-2">Quick Links</h3>
                         <ul className="flex flex-col gap-3">
-                            <li><Link href="#home" className="flex items-center gap-2"><FaHome size={16} />Home</Link></li>
                             <li><Link href="/gallery/" className="flex items-center gap-2"><FaImages size={16} />Gallery</Link></li>
                             <li><Link href="/collections/" className="flex items-center gap-2"><FaLayerGroup size={16} />Collections</Link></li>
                             <li><Link href="/about/" className="flex items-center gap-2"><FaInfoCircle size={16} />About</Link></li>
@@ -19,7 +18,7 @@ const Footer = () =>{
                         </ul>
                     </div>
                     <div>
-                        <h3 className="font-bold mb-4 text-xl flex items-center gap-2">Meet the Developer</h3>
+                        <h3 className="font-bold mb-4 text-xl flex items-center gap-2">Connect</h3>
                         <ul className="flex flex-col gap-3">
                             <li>
                                 <Link href="https://github.com/Pranav-Rustagi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2"><FaGithub size={16} />GitHub</Link>
@@ -37,7 +36,6 @@ const Footer = () =>{
                         <ul className="flex flex-col gap-3">
                             <li><Link href="/privacy/" className="flex items-center gap-2"><FaLock size={16} />Privacy Policy</Link></li>
                             <li><Link href="/terms/" className="flex items-center gap-2"><FaFileContract size={16} />Terms of Service</Link></li>
-                            <li><Link href="/sitemap/" className="flex items-center gap-2"><FaSitemap size={16} />Sitemap</Link></li>
                         </ul>
                     </div>
                 </div>

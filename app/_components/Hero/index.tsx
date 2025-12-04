@@ -5,8 +5,8 @@ const Hero = () => {
                 <h1 className="text-7xl font-black mb-5">
                     Welcome to
                 </h1>
-                <h1 className="text-7xl font-black mb-5 text-decorative">
-                    CSSLY
+                <h1 className="text-7xl font-black mb-5 text-decorative font-mono">
+                    CSSly
                 </h1>
                 <p className="text-xl font-normal mb-8 opacity-90">
                     Explore beautiful designs crafted with pure HTML and CSS
