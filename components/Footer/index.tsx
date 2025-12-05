@@ -14,7 +14,7 @@ const Footer = () =>{
                             <li><Link href="/gallery/" className="flex items-center gap-2"><FaImages size={16} />Gallery</Link></li>
                             <li><Link href="/collections/" className="flex items-center gap-2"><FaLayerGroup size={16} />Collections</Link></li>
                             <li><Link href="/about/" className="flex items-center gap-2"><FaInfoCircle size={16} />About</Link></li>
-                            <li><Link href="mailto:contact@cssly.com" className="flex items-center gap-2"><FaEnvelope size={16} />Contact</Link></li>
+                            <li><Link href="mailto:pranav001100@gmail.com" className="flex items-center gap-2"><FaEnvelope size={16} />Contact</Link></li>
                         </ul>
                     </div>
                     <div>

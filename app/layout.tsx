@@ -3,7 +3,7 @@ import "./globals.css";
 import { Header, Footer } from "@/components";
 
 export const metadata: Metadata = {
-    title: "cssly | Pure HTML & CSS Designs",
+    title: "CSSly | Pure HTML & CSS Designs",
     description: "A collection of beautiful, responsive, and accessible web designs built using only HTML and CSS. Perfect for inspiration and learning.",
 };
 

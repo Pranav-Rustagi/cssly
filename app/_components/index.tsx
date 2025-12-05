@@ -1,7 +1,8 @@
-import Hero from "./Hero";
-import Featured from "./Featured";
 import About from "./About";
-import Upcoming from "./Upcoming";
 import Contact from "./Contact";
+import Featured from "./Featured";
+import Hero from "./Hero";
+import Support from "./Support";
+import Upcoming from "./Upcoming";
 
-export { Hero, Featured, About, Upcoming, Contact };
+export { About, Contact, Featured, Hero, Support, Upcoming };
