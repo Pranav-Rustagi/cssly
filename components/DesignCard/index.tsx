@@ -17,7 +17,7 @@ interface DesignCardProps {
 
 const DesignCard = ({ design }: DesignCardProps) => {
     return (
-        <div className="bg-white dark:bg-secondary rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
+        <div className="bg-white dark:bg-secondary rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
             <div className="h-48 bg-linear-to-br from-blue-400 to-purple-500 flex items-center justify-center">
                 <div className="text-center">
                     <div className="text-white text-5xl font-bold opacity-50">

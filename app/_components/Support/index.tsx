@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Support = () => {
     return (
-        <section id="support" className="w-full bg-light dark:bg-primary py-48 px-8">
+        <section id="support" className="w-full bg-light-2 dark:bg-primary-2 py-48 px-8">
             <div className="max-w-[1400px] mx-auto px-40">
                 <div className="mb-12">
                     <div className="flex gap-6 mb-10">

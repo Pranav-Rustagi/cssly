@@ -9,7 +9,7 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="w-full bg-light-2 py-48 px-8 dark:bg-primary-2">
+        <section id="contact" className="w-full bg-light-2 py-24 px-8 dark:bg-primary-2">
             <div className="max-w-[1400px] mx-auto px-40">
                 <ContactHeader />
 

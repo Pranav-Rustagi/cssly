@@ -39,7 +39,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
         <div className="w-full max-w-3xl mx-auto">
             <form
                 onSubmit={handleSubmit}
-                className="bg-white dark:bg-secondary p-6 md:p-8 rounded-2xl shadow-sm transition-all duration-300"
+                className="bg-light dark:bg-secondary p-6 md:p-8 rounded-2xl shadow-sm transition-all duration-300"
             >
                 {submitted ? (
                     <div className="text-center py-8">

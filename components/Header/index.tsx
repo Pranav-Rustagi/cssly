@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import { FaMoon, FaSun } from "react-icons/fa";
 
-const Header: React.FC = () => {
+const Header = () => {
     const toggleTheme = () => {
         try {
             const currentTheme = document.documentElement.getAttribute("data-theme");
@@ -35,7 +35,7 @@ const Header: React.FC = () => {
         <nav className="sticky top-0 z-50 text-primary bg-light border-b border-b-border-light dark:text-light dark:bg-primary dark:border-border-dark">
             <div className="flex justify-between items-center max-w-[1400px] mx-auto py-5 px-8">
                 <div className="text-decorative font-bold text-4xl font-mono">
-                    <a href="#home">CSSly</a>
+                    <Link href="/">CSSly</Link>
                 </div>
                 <ul className="flex gap-8 items-center">
                     <li>
