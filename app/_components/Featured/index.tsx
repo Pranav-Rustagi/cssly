@@ -22,9 +22,9 @@ const Featured = () => {
 
     return (
         <Section type="secondary">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 md:mb-16">
 
-                <Heading text="Featured Designs" />
+                <Heading text="Featured Designs" containerClassName="justify-center!" />
 
                 <Subtext>
                     Discover the best of our design collection

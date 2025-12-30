@@ -11,7 +11,7 @@ const AboutSection = () => {
                             — &nbsp;&nbsp;HTML & CSS, nothing else
                         </h2>
                     </div>
-                    <p className="text-lg text-primary dark:text-light opacity-80 mx-auto">
+                    <p className="text-lg text-primary dark:text-light mx-auto">
                         CSSly is a gallery of visual experiments built only with HTML and CSS — no images, no JavaScript, no libraries, and no external assets. It&apos;s a space where the simplest tools of the web are pushed to their expressive limits to create shapes, motion, textures, patterns, characters, and small atmospheric scenes. By working within these constraints, each piece highlights the raw, elegant potential of pure CSS and HTML, showing how minimal ingredients can produce surprisingly intricate results.
                         <br />
                         <br />

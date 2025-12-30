@@ -1,6 +1,6 @@
 'use client';
 
-import { FeatureCard, Section } from '@/components';
+import { FeatureCard, Heading, Section } from '@/components';
 import { FaCode, FaPalette, FaLightbulb, FaWandMagicSparkles } from 'react-icons/fa6';
 
 const StandoutSection = () => {
@@ -31,15 +31,10 @@ const StandoutSection = () => {
         <Section type="secondary">
             <div className="mb-20">
                 <div className="flex gap-6 mb-10">
-                    <h2 className="text-5xl font-black text-primary dark:text-light">
-                        How
-                    </h2>
-                    <h2 className="text-5xl font-semibold text-decorative font-mono">
-                        CSSly
-                    </h2>
-                    <h2 className="text-5xl font-black text-primary dark:text-light">
-                        stands out?
-                    </h2>
+                    <Heading 
+                        text={["How", "CSSly", "stands", "out"]}
+                        containerClassName="justify-start!"
+                    />
                 </div>
             </div>
 

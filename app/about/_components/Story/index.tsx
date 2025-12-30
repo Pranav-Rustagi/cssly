@@ -11,7 +11,7 @@ const StorySection = () => {
                             Gallery
                         </h2>
                     </div>
-                    <p className="text-lg text-primary dark:text-light opacity-80 mx-auto">
+                    <p className="text-lg text-primary dark:text-light mx-auto">
                         CSSly grew from a simple habit of mine: opening a blank file and creating something just for fun. No setup, no framework, no goal — just curiosity, boredom, and the satisfaction of building something from almost nothing.
                         <br />
                         <br />

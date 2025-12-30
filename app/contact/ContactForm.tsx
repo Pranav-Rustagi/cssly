@@ -46,7 +46,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
                         <h4 className="text-lg md:text-xl font-bold text-decorative">
                             Thanks — message received!
                         </h4>
-                        <p className="text-sm md:text-base text-decorative opacity-80 mt-2">
+                        <p className="text-sm md:text-base text-decorative mt-2">
                             I'll get back to you as soon as I can.
                         </p>
                     </div>

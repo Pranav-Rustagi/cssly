@@ -1,6 +1,6 @@
 "use client";
 
-import { PipelineCard, Section } from "@/components";
+import { Heading, PipelineCard, Section, Subtext } from "@/components";
 
 interface PipelineDesign {
     id: number;
@@ -27,13 +27,15 @@ const Upcoming = () => {
 
     return (
         <Section type="primary">
-            <div className="text-center mb-16">
-                <h2 className="text-5xl font-black text-primary dark:text-light mb-4">
-                    In The Works
-                </h2>
-                <p className="text-lg text-primary dark:text-light opacity-80">
+            <div className="text-center mb-8 md:mb-16">
+                <Heading
+                    text={["In", "the", "works"]}
+                    containerClassName="justify-center!"
+                />
+
+                <Subtext>
                     Designs I'm currently working on and planning to create
-                </p>
+                </Subtext>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

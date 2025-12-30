@@ -3,46 +3,68 @@
 import Link from "next/link";
 import { FaHome, FaImages, FaLayerGroup, FaInfoCircle, FaEnvelope, FaGithub, FaLinkedin, FaDev, FaLock, FaFileContract, FaSitemap } from "react-icons/fa";
 
-const Footer = () =>{
+
+const FooterSection = ({ title, links }: { title: string; links: { href: string; label: string; icon: React.ReactNode }[] }) => {
+    return (
+        <div>
+            <h3 className="font-bold mb-4 text-lg md:text-xl flex items-center gap-2">{title}</h3>
+            <ul className="flex flex-col gap-3">
+                {links.map((link) => (
+                    <li key={link.href}>
+                        <Link href={link.href} className="flex items-center gap-2 text-xs md:text-sm md:text-base">
+                            {link.icon}
+                            {link.label}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
+const Footer = () => {
     return (
         <footer className="text-primary bg-light border-t border-t-border-light dark:text-light dark:bg-secondary dark:border-border-dark">
-            <div className="mx-auto py-12 px-8 max-w-[1400px]">
-                <div className="flex justify-around mb-10">
-                    <div>
-                        <h3 className="font-bold mb-4 text-xl flex items-center gap-2">Quick Links</h3>
-                        <ul className="flex flex-col gap-3">
-                            <li><Link href="/gallery/" className="flex items-center gap-2"><FaImages size={16} />Gallery</Link></li>
-                            <li><Link href="/collections/" className="flex items-center gap-2"><FaLayerGroup size={16} />Collections</Link></li>
-                            <li><Link href="/about/" className="flex items-center gap-2"><FaInfoCircle size={16} />About</Link></li>
-                            <li><Link href="mailto:pranav001100@gmail.com" className="flex items-center gap-2"><FaEnvelope size={16} />Contact</Link></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 className="font-bold mb-4 text-xl flex items-center gap-2">Connect</h3>
-                        <ul className="flex flex-col gap-3">
-                            <li>
-                                <Link href="https://github.com/Pranav-Rustagi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2"><FaGithub size={16} />GitHub</Link>
-                            </li>
-                            <li>
-                                <Link href="https://www.linkedin.com/in/pranav-rustagi/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2"><FaLinkedin size={16} />LinkedIn</Link>
-                            </li>
-                            <li>
-                                <Link href="http://dev.to/pranav-rustagi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2"><FaDev size={16} />Dev.to</Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 className="font-bold mb-4 text-xl flex items-center gap-2">Other</h3>
-                        <ul className="flex flex-col gap-3">
-                            <li><Link href="/privacy/" className="flex items-center gap-2"><FaLock size={16} />Privacy Policy</Link></li>
-                            <li><Link href="/terms/" className="flex items-center gap-2"><FaFileContract size={16} />Terms of Service</Link></li>
-                        </ul>
-                    </div>
+            <div className="mx-auto py-24 pb-8 px-8 max-w-[1400px]">
+                <div className="flex flex-wrap gap-10 md:justify-around mb-10">
+
+                    <FooterSection
+                        title="Quick Links"
+                        links={[
+                            { href: "/gallery/", label: "Gallery", icon: <FaImages size={16} /> },
+                            { href: "/collections/", label: "Collections", icon: <FaLayerGroup size={16} /> },
+                            { href: "/about/", label: "About", icon: <FaInfoCircle size={16} /> },
+                            { href: "mailto:    pranav001100@gmail.com", label: "Contact", icon: <FaEnvelope size={16} /> },
+                        ]}
+                    />
+
+                    <FooterSection
+                        title="Connect"
+                        links={[
+                            { href: "https://github.com/Pranav-Rustagi", label: "GitHub", icon: <FaGithub size={16} /> },
+                            { href: "https://www.linkedin.com/in/pranav-rustagi/", label: "LinkedIn", icon: <FaLinkedin size={16} /> },
+                            // { href: "http://dev.to/pranav-rustagi", label: "Dev.to", icon: <FaDev size={16} /> },
+                        ]}
+                    />
+
+                    <FooterSection
+                        title="Other Links"
+                        links={[
+                            { href: "/privacy/", label: "Privacy Policy", icon: <FaLock size={16} /> },
+                            { href: "/terms/", label: "Terms of Service", icon: <FaFileContract size={16} /> },
+                            // { href: "/sitemap.xml", label: "Sitemap", icon: <FaSitemap size={16} /> }
+                        ]}
+                    />
                 </div>
 
-                <div className="flex justify-between mt-8 pt-8 px-16 border-t border-t-border-light text-sm text-center dark:border-t-border-dark">
-                    <span>Copyright &copy; {new Date().getFullYear()} cssly | All rights reserved</span>
-                    <span>All designs created with pure HTML & CSS.</span>
+                <div className="flex flex-col-reverse md:flex-row justify-between mt-16 pt-8 lg:px-16 border-t border-t-border-light text-xs md:text-sm text-center dark:border-t-border-dark gap-4">
+                    <div>
+                        <span>Copyright &copy; {new Date().getFullYear()} CSSly</span>
+                    </div>
+
+                    <div>
+                        <span>All designs created with pure HTML & CSS</span>
+                    </div>
                 </div>
             </div>
         </footer>

@@ -14,7 +14,7 @@ const CreatorSection = () => {
                             behind
                         </h2>
                     </div>
-                    <p className="text-lg text-primary dark:text-light opacity-80 mx-auto">
+                    <p className="text-lg text-primary dark:text-light mx-auto">
                         Hi, I&apos;m Pranav Rustagi — a full-stack developer with a strong interest in frontend creativity and building things that feel simple, thoughtful, and fun. I enjoy experimenting with ideas, exploring what&apos;s possible with minimal tools, and creating projects that reflect curiosity rather than complexity.
                         <br />
                         <br />

@@ -35,7 +35,7 @@ const Header = () => {
     return (
         <nav className="sticky top-0 z-50 text-primary bg-light border-b border-b-border-light dark:text-light dark:bg-primary dark:border-border-dark">
             <div className="flex justify-between items-center max-w-[1400px] mx-auto py-5 px-4 md:px-8">
-                <div className="text-decorative font-bold text-4xl font-mono">
+                <div className="text-decorative font-bold text-3xl md:text-4xl font-mono">
                     <Link href="/">CSSly</Link>
                 </div>
                 <ul className="flex gap-4 md:gap-8 items-center">

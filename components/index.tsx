@@ -1,4 +1,5 @@
 import Button from "./Button";
+import DescriptionText from "./DescriptionText";
 import DesignCard from "./DesignCard";
 import FeatureCard from "./FeatureCard";
 import Footer from "./Footer";
@@ -8,4 +9,15 @@ import PipelineCard from "./PipelineCard";
 import Section from "./Section";
 import Subtext from "./Subtext";
 
-export { Button, DesignCard,FeatureCard, Footer, Header, Heading, PipelineCard, Section, Subtext };
+export {
+    Button,
+    DescriptionText,
+    DesignCard,
+    FeatureCard,
+    Footer,
+    Header,
+    Heading,
+    PipelineCard,
+    Section,
+    Subtext
+};

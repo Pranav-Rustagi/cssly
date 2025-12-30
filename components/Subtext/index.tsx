@@ -5,7 +5,7 @@ interface SubtextProps {
 
 const Subtext = ({ children, className = '' }: SubtextProps) => {
     return (
-        <p className={`text-lg opacity-80 ${className}`}>
+        <p className={`text-center text-base md:text-xl ${className}`}>
             {children}
         </p>
     );
