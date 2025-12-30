@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import { FaMoon, FaSun } from "react-icons/fa";
+import { IoMenu } from "react-icons/io5";
 
 const Header = () => {
     const toggleTheme = () => {
@@ -17,37 +18,37 @@ const Header = () => {
     }
 
     useEffect(() => {
-            try {
-                const saved = localStorage.getItem("theme");
-                if (saved === "light" || saved === "dark") {
-                    document.documentElement.setAttribute("data-theme", saved);
-                    return;
-                }
-            } catch (e) {
-                console.error("Failed to load theme from localStorage:", e);
+        try {
+            const saved = localStorage.getItem("theme");
+            if (saved === "light" || saved === "dark") {
+                document.documentElement.setAttribute("data-theme", saved);
+                return;
             }
-    
-            const prefersDark = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-            document.documentElement.setAttribute("data-theme", prefersDark ? "dark" : "light");
-        }, []);
+        } catch (e) {
+            console.error("Failed to load theme from localStorage:", e);
+        }
+
+        const prefersDark = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.setAttribute("data-theme", prefersDark ? "dark" : "light");
+    }, []);
 
     return (
         <nav className="sticky top-0 z-50 text-primary bg-light border-b border-b-border-light dark:text-light dark:bg-primary dark:border-border-dark">
-            <div className="flex justify-between items-center max-w-[1400px] mx-auto py-5 px-8">
+            <div className="flex justify-between items-center max-w-[1400px] mx-auto py-5 px-4 md:px-8">
                 <div className="text-decorative font-bold text-4xl font-mono">
                     <Link href="/">CSSly</Link>
                 </div>
-                <ul className="flex gap-8 items-center">
-                    <li>
+                <ul className="flex gap-4 md:gap-8 items-center">
+                    <li className="hidden md:block">
                         <Link href="/gallery/">Gallery</Link>
                     </li>
-                    <li>
+                    <li className="hidden md:block">
                         <Link href="/collections/">Collections</Link>
                     </li>
-                    <li>
+                    <li className="hidden md:block">
                         <Link href="/about/">About</Link>
                     </li>
-                    <li>
+                    <li className="hidden md:block">
                         <Link href="/contact/">Contact</Link>
                     </li>
                     <li>
@@ -57,6 +58,11 @@ const Header = () => {
                         >
                             <FaMoon size={20} className="hidden dark:inline-flex" />
                             <FaSun size={24} className="dark:hidden" />
+                        </button>
+                    </li>
+                    <li className="md:hidden">
+                        <button className="flex items-center justify-center bg-primary w-10 h-10 text-light dark:bg-light dark:text-primary rounded-full hover:-rotate-30 transition-all cursor-pointer">
+                            <IoMenu size={24} />
                         </button>
                     </li>
                 </ul>

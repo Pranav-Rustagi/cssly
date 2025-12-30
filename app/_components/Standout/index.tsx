@@ -1,6 +1,6 @@
 'use client';
 
-import { FeatureCard } from '@/components';
+import { FeatureCard, Section } from '@/components';
 import { FaCode, FaPalette, FaLightbulb, FaWandMagicSparkles } from 'react-icons/fa6';
 
 const StandoutSection = () => {
@@ -28,34 +28,32 @@ const StandoutSection = () => {
     ];
 
     return (
-        <section className="w-full bg-light-2 dark:bg-primary-2 py-48 px-8">
-            <div className="max-w-[1400px] mx-auto px-40">
-                <div className="mb-20">
-                    <div className="flex gap-6 mb-10">
-                        <h2 className="text-5xl font-black text-primary dark:text-light">
-                            How
-                        </h2>
-                        <h2 className="text-5xl font-semibold text-decorative font-mono">
-                            CSSly
-                        </h2>
-                        <h2 className="text-5xl font-black text-primary dark:text-light">
-                            stands out?
-                        </h2>
-                    </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-8">
-                    {features.map((feature, index) => (
-                        <FeatureCard
-                            key={index}
-                            icon={feature.icon}
-                            title={feature.title}
-                            description={feature.description}
-                        />
-                    ))}
+        <Section type="secondary">
+            <div className="mb-20">
+                <div className="flex gap-6 mb-10">
+                    <h2 className="text-5xl font-black text-primary dark:text-light">
+                        How
+                    </h2>
+                    <h2 className="text-5xl font-semibold text-decorative font-mono">
+                        CSSly
+                    </h2>
+                    <h2 className="text-5xl font-black text-primary dark:text-light">
+                        stands out?
+                    </h2>
                 </div>
             </div>
-        </section>
+
+            <div className="grid grid-cols-2 gap-8">
+                {features.map((feature, index) => (
+                    <FeatureCard
+                        key={index}
+                        icon={feature.icon}
+                        title={feature.title}
+                        description={feature.description}
+                    />
+                ))}
+            </div>
+        </Section>
     );
 };
 
