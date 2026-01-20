@@ -26,20 +26,20 @@ const DesignCard = ({ design }: DesignCardProps) => {
                 </div>
             </div>
 
-            <div className="p-6 pb-10 flex flex-col grow">
-                <h3 className="text-xl font-bold text-primary dark:text-light mb-2">
+            <div className="p-6 pt-4 md:pt-6 pb-10 flex flex-col grow">
+                <h3 className="text-lg md:text-xl font-bold text-primary dark:text-light mb-2">
                     {design.title}
                 </h3>
 
-                <p className="text-primary dark:text-light opacity-70 mb-8 text-sm line-clamp-2">
+                <p className="text-primary dark:text-light opacity-70 mb-6 md:mb-8 text-xs md:text-sm line-clamp-2">
                     {design.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-10">
+                <div className="flex flex-wrap gap-2 mb-7 md:mb-10">
                     {design.tags.map((tag) => (
                         <span
                             key={tag}
-                            className="border border-decorative text-decorative text-xs px-4 py-2 rounded-full font-bold"
+                            className="border border-decorative text-decorative text-xs px-2 py-1 md:px-4 md:py-2 rounded-full font-bold"
                         >
                             {tag}
                         </span>

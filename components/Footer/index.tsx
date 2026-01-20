@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FaHome, FaImages, FaLayerGroup, FaInfoCircle, FaEnvelope, FaGithub, FaLinkedin, FaDev, FaLock, FaFileContract, FaSitemap } from "react-icons/fa";
+import { FaImages, FaLayerGroup, FaInfoCircle, FaEnvelope, FaGithub, FaLinkedin, FaDev, FaLock, FaFileContract } from "react-icons/fa";
 
 
 const FooterSection = ({ title, links }: { title: string; links: { href: string; label: string; icon: React.ReactNode }[] }) => {
@@ -11,7 +11,7 @@ const FooterSection = ({ title, links }: { title: string; links: { href: string;
             <ul className="flex flex-col gap-3">
                 {links.map((link) => (
                     <li key={link.href}>
-                        <Link href={link.href} className="flex items-center gap-2 text-xs md:text-sm md:text-base">
+                        <Link href={link.href} className="flex items-center gap-2 text-xs md:text-sm lg:text-base">
                             {link.icon}
                             {link.label}
                         </Link>
@@ -43,7 +43,7 @@ const Footer = () => {
                         links={[
                             { href: "https://github.com/Pranav-Rustagi", label: "GitHub", icon: <FaGithub size={16} /> },
                             { href: "https://www.linkedin.com/in/pranav-rustagi/", label: "LinkedIn", icon: <FaLinkedin size={16} /> },
-                            // { href: "http://dev.to/pranav-rustagi", label: "Dev.to", icon: <FaDev size={16} /> },
+                            { href: "http://dev.to/pranav-rustagi", label: "Dev.to", icon: <FaDev size={16} /> },
                         ]}
                     />
 
@@ -52,7 +52,6 @@ const Footer = () => {
                         links={[
                             { href: "/privacy/", label: "Privacy Policy", icon: <FaLock size={16} /> },
                             { href: "/terms/", label: "Terms of Service", icon: <FaFileContract size={16} /> },
-                            // { href: "/sitemap.xml", label: "Sitemap", icon: <FaSitemap size={16} /> }
                         ]}
                     />
                 </div>

@@ -29,16 +29,14 @@ const StandoutSection = () => {
 
     return (
         <Section type="secondary">
-            <div className="mb-20">
-                <div className="flex gap-6 mb-10">
-                    <Heading 
-                        text={["How", "CSSly", "stands", "out"]}
-                        containerClassName="justify-start!"
-                    />
-                </div>
+            <div className="flex gap-6 mb-4 md:mb-10">
+                <Heading
+                    text={["How", "CSSly", "stands", "out"]}
+                    containerClassName="justify-start!"
+                />
             </div>
 
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-12">
                 {features.map((feature, index) => (
                     <FeatureCard
                         key={index}

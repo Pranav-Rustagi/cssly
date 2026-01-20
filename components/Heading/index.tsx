@@ -8,10 +8,10 @@ export const Heading = ({ text, className = "", containerClassName = "" } : Head
     const texts = Array.isArray(text) ? text : [text];
 
     return (
-        <div className={`flex flex-wrap flex-row justify-start md:justify-center items-center gap-2 mb-5 ${containerClassName}`}>
+        <div className={`flex flex-wrap flex-row justify-start md:justify-center items-center gap-2 md:gap-4 mb-5 ${containerClassName}`}>
             {
                 texts.map((text, index) => {
-                    const textColor = text === "CSSly" ? "text-decorative font-mono" : "text-primary dark:text-light";
+                    const textColor = text === "CSSly" ? "text-decorative font-mono mt-0.5 md:mt-1.5" : "text-primary dark:text-light";
 
                     return (
                         <h1
