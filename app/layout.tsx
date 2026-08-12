@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 // Blocking, synchronous theme init — runs before first paint so there is no
 // dark-flash on load. Reads localStorage.theme, falls back to system
 // preference, and guards against a blocked/unavailable localStorage.
-const themeInitScript = `(function(){try{var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();`;
+const themeInitScript = `(function(){var t=null;try{t=localStorage.getItem("theme");}catch(e){}if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);})();`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
