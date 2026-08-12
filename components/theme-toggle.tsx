@@ -4,6 +4,7 @@ import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { THEME_COLOR_META_ID, THEME_COLORS } from "@/lib/theme";
 
 type Theme = "light" | "dark";
 
@@ -20,6 +21,9 @@ export function ThemeToggle() {
   function toggle() {
     const next: Theme = theme === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", next);
+    document
+      .getElementById(THEME_COLOR_META_ID)
+      ?.setAttribute("content", THEME_COLORS[next]);
     try {
       localStorage.setItem("theme", next);
     } catch {
