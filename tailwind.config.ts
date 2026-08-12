@@ -20,6 +20,7 @@ const config: Config = {
         bg: "var(--color-bg)",
         surface: "var(--color-surface)",
         accent: "var(--color-accent)",
+        text: "var(--color-text)",
       },
       borderRadius: {
         sm: "calc(var(--radius) - 4px)",
