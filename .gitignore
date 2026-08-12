@@ -42,3 +42,7 @@ next-env.d.ts
 
 # local planning docs — never commit
 PRD.md
+
+# auto-generated agent instruction files
+AGENTS.md
+CLAUDE.md
