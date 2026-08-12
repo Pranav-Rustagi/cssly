@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+Requires Node.js 20.9+ (see `.nvmrc`).
+
 First, run the development server:
 
 ```bash
