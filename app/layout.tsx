@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 // dark-flash on load. Reads localStorage.theme, falls back to system
 // preference, and guards against a blocked/unavailable localStorage. Also
 // keeps the theme-color meta (id below) in sync so browser chrome matches.
-const themeInitScript = `(function(){var t=null;try{t=localStorage.getItem("theme");}catch(e){}if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);var m=document.getElementById("${THEME_COLOR_META_ID}");if(m)m.setAttribute("content",t==="dark"?"${THEME_COLORS["dark"]}":"${THEME_COLORS["light"]}");})();`;
+const themeInitScript = `(function(){var t=null;try{t=localStorage.getItem("theme");}catch(e){}if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);var m=document.getElementById("${THEME_COLOR_META_ID}");if(m)m.setAttribute("content",t==="dark"?"${THEME_COLORS.dark}":"${THEME_COLORS.light}");})();`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (

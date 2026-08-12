@@ -41,7 +41,7 @@
   --color-border: var(--color-border-light);
   --color-text: var(--color-primary);
   --color-text-muted: color-mix(in srgb, var(--color-text) 55%, var(--color-bg) 45%);
-  --color-accent: color-mix(in srgb, var(--color-decorative) 99%, black 1%);
+  --color-accent: color-mix(in srgb, var(--color-decorative) 97%, black 3%);
   --color-accent-hover: color-mix(in srgb, var(--color-accent) 85%, black 15%);
   --shadow-accent: 0 5px 16px rgb(99 102 241 / 0.5);
 
