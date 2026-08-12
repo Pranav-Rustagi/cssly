@@ -5,6 +5,19 @@
 @config "../tailwind.config.ts";
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+/* Tailwind v4's built-in .container utility can't be overridden via
+ * @utility (it only appends alongside the native rules); exclude it from
+ * candidate scanning and define it as plain CSS instead: centred, 1rem
+ * horizontal padding, capped at 1400px. No media query needed — a block
+ * element is already full-width below the cap. */
+@source not inline("container");
+
+.container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: 1400px;
+}
+
 /*
  * Placeholder tokens only — proves the tailwind.config.ts / globals.css
  * split works end to end. The full palette and semantic layer land in a
