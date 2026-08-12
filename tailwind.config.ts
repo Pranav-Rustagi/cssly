@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-// Theme STRUCTURE only — token names, radius scale, shadows, container,
+// Theme STRUCTURE only — token names, radius scale, shadows,
 // screens. Colour entries point at CSS variables; the values themselves
 // live in app/globals.css under :root and [data-theme="dark"], since a
 // TS config is evaluated at build time and can't react to the data-theme
