@@ -15,11 +15,7 @@ function readTheme(): Theme {
 }
 
 export function ThemeToggle() {
-  const [theme, setTheme] = React.useState<Theme>("light");
-
-  React.useEffect(() => {
-    setTheme(readTheme());
-  }, []);
+  const [theme, setTheme] = React.useState<Theme>(readTheme);
 
   function toggle() {
     const next: Theme = theme === "dark" ? "light" : "dark";
@@ -43,8 +39,13 @@ export function ThemeToggle() {
       aria-pressed={isDark}
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       onClick={toggle}
+      suppressHydrationWarning
     >
-      {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
+      {/* Both icons render always; visibility is driven purely by the
+       * `dark:` variant (mapped to [data-theme=dark]) so there's no
+       * client/server mismatch from conditional icon rendering. */}
+      <Moon className="size-4 dark:hidden" />
+      <Sun className="hidden size-4 dark:block" />
     </Button>
   );
 }
