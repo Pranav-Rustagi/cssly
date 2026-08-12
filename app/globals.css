@@ -18,16 +18,49 @@
   max-width: 1400px;
 }
 
-/*
- * Placeholder tokens only — proves the tailwind.config.ts / globals.css
- * split works end to end. The full palette and semantic layer land in a
- * follow-up issue.
- */
 :root {
-  --color-bg: #ffffff;
-  --color-surface: #f4f4f5;
-  --color-accent: #2563eb;
-  --color-text: #18181b;
+  /* base palette — fixed, do not alter */
+  --color-primary: #000000;
+  --color-primary-2: #0F0F0F;
+  --color-secondary: #1A1A1A;
+  --color-decorative: #6366F1;
+  --color-decorative-light: #9c9dff;
+  --color-light: #FFFFFF;
+  --color-light-2: #F9FAFB;
+  --color-border-dark: #2A2A2A;
+  --color-border-light: #E2E8F0;
+
+  /* semantic layer — light theme */
+  --color-bg: var(--color-light);
+  --color-bg-alt: var(--color-light-2);
+  --color-surface: var(--color-light);
+  --color-border: var(--color-border-light);
+  --color-text: var(--color-primary);
+  --color-text-muted: color-mix(in srgb, var(--color-text) 55%, var(--color-bg) 45%);
+  --color-accent: var(--color-decorative);
+  --color-accent-hover: color-mix(in srgb, var(--color-accent) 85%, black 15%);
+  --shadow-accent: 0 5px 16px rgb(99 102 241 / 0.5);
+
+  /* shadcn variable mapping — pointed at CSSly semantic tokens */
+  --background: var(--color-bg);
+  --foreground: var(--color-text);
+  --card: var(--color-surface);
+  --card-foreground: var(--color-text);
+  --popover: var(--color-surface);
+  --popover-foreground: var(--color-text);
+  --primary: var(--color-accent);
+  --primary-foreground: var(--color-light);
+  --secondary: var(--color-bg-alt);
+  --secondary-foreground: var(--color-text);
+  --muted: var(--color-bg-alt);
+  --muted-foreground: var(--color-text-muted);
+  --accent: var(--color-accent);
+  --accent-foreground: var(--color-light);
+  --destructive: #dc2626;
+  --destructive-foreground: var(--color-light);
+  --border: var(--color-border);
+  --input: var(--color-border);
+  --ring: var(--color-accent);
 
   --radius: 0.5rem;
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -35,10 +68,37 @@
 }
 
 [data-theme="dark"] {
-  --color-bg: #0a0a0a;
-  --color-surface: #18181b;
-  --color-accent: #3b82f6;
-  --color-text: #f4f4f5;
+  /* semantic layer — dark theme */
+  --color-bg: var(--color-primary);
+  --color-bg-alt: var(--color-primary-2);
+  --color-surface: var(--color-secondary);
+  --color-border: var(--color-border-dark);
+  --color-text: var(--color-light);
+  --color-text-muted: color-mix(in srgb, var(--color-text) 55%, var(--color-bg) 45%);
+  --color-accent: var(--color-decorative-light);
+  --color-accent-hover: color-mix(in srgb, var(--color-accent) 85%, white 15%);
+  --shadow-accent: 0 5px 20px rgb(156 157 255 / 0.45);
+
+  /* shadcn variable mapping — dark */
+  --background: var(--color-bg);
+  --foreground: var(--color-text);
+  --card: var(--color-surface);
+  --card-foreground: var(--color-text);
+  --popover: var(--color-surface);
+  --popover-foreground: var(--color-text);
+  --primary: var(--color-accent);
+  --primary-foreground: var(--color-primary);
+  --secondary: var(--color-bg-alt);
+  --secondary-foreground: var(--color-text);
+  --muted: var(--color-bg-alt);
+  --muted-foreground: var(--color-text-muted);
+  --accent: var(--color-accent);
+  --accent-foreground: var(--color-primary);
+  --destructive: #f87171;
+  --destructive-foreground: var(--color-primary);
+  --border: var(--color-border);
+  --input: var(--color-border);
+  --ring: var(--color-accent);
 }
 
 @layer base {
