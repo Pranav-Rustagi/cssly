@@ -60,6 +60,11 @@
   --muted-foreground: var(--color-text-muted);
   --accent: var(--color-accent);
   --accent-foreground: var(--color-light);
+  /* subtle neutral hover/active background for shadcn primitives (menu
+   * items, select rows, …) — distinct from the brand accent above, which
+   * `--accent` is bound to for CSSly's own bg-accent/text-accent usage */
+  --menu-accent: color-mix(in srgb, var(--color-surface) 92%, var(--color-text) 8%);
+  --menu-accent-foreground: var(--color-text);
   --destructive: var(--color-danger);
   --destructive-foreground: var(--color-light);
   --border: var(--color-border);
@@ -98,6 +103,9 @@
   --muted-foreground: var(--color-text-muted);
   --accent: var(--color-accent);
   --accent-foreground: var(--color-primary);
+  /* subtle neutral hover/active background — lifted grey, not brand indigo */
+  --menu-accent: color-mix(in srgb, var(--color-surface) 85%, var(--color-text) 15%);
+  --menu-accent-foreground: var(--color-text);
   --destructive: var(--color-danger-light);
   --destructive-foreground: var(--color-primary);
   --border: var(--color-border);

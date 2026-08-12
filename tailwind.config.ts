@@ -29,6 +29,13 @@ const config: Config = {
         },
         "accent-hover": "var(--color-accent-hover)",
 
+        // subtle neutral hover/active background for shadcn primitives
+        // (dropdown-menu, select, …) — never the brand accent above
+        "menu-accent": {
+          DEFAULT: "var(--menu-accent)",
+          foreground: "var(--menu-accent-foreground)",
+        },
+
         // shadcn variable names, kept in sync with the CSSly semantic
         // layer in globals.css (never a literal palette of their own)
         background: "var(--background)",
