@@ -19,12 +19,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        {/* Theme-color meta must precede the init script so the script can look it up by id. */}
         <meta
           id={THEME_COLOR_META_ID}
           name="theme-color"
           content={THEME_COLORS.light}
         />
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <style>{`:root{color-scheme:light dark}[data-theme=light]{color-scheme:light}[data-theme=dark]{color-scheme:dark}`}</style>
       </head>
       <body className="min-h-full flex flex-col">
