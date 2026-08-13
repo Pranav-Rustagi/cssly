@@ -4,7 +4,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import { THEME_COLOR_META_ID, THEME_COLORS } from "@/lib/theme";
 
+// No known production domain yet, so this falls back to a placeholder —
+// override with NEXT_PUBLIC_SITE_URL once cssly has a real one. Needed so
+// per-page canonical URLs and OG images can resolve to absolute URLs.
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://cssly.pages.dev"),
   title: "cssly",
   description: "cssly",
 };
