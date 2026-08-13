@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 interface ArtworkFrameProps {
@@ -16,10 +19,12 @@ interface ArtworkFrameProps {
  * setting — no scripts, no forms, no same-origin — so the artwork's CSS
  * never touches CSSly's own DOM, regardless of what the file contains.
  *
- * Scaling is pure CSS: the wrapper is a container-query context sized by
- * the artwork's aspect ratio, and the iframe (rendered at its native
- * viewport size) is scaled down with `transform: scale(100cqw / width)`.
- * No ResizeObserver, no JS.
+ * `scale()` only accepts a `<number>` or `<percentage>`, and `calc()` can't
+ * divide a length by a length to produce one — so `scale(calc(100cqw /
+ * width))` is invalid and browsers drop the whole `transform` declaration
+ * (computed value falls back to `none`), leaving the artwork unscaled. A
+ * ResizeObserver on the wrapper computes the ratio in JS instead and writes
+ * it to a CSS custom property the iframe's transform reads.
  */
 export function ArtworkFrame({
   slug,
@@ -29,11 +34,31 @@ export function ArtworkFrame({
   className,
 }: ArtworkFrameProps) {
   const { width, height } = viewport;
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (mode !== "card") return;
+    const wrapper = wrapperRef.current;
+    if (!wrapper) return;
+
+    const observer = new ResizeObserver(([entry]) => {
+      const scale = entry.contentRect.width / width;
+      wrapper.style.setProperty("--artwork-scale", String(scale));
+    });
+    observer.observe(wrapper);
+    return () => observer.disconnect();
+  }, [mode, width]);
 
   return (
     <div
+      ref={wrapperRef}
       className={cn("relative overflow-hidden [container-type:inline-size]", className)}
-      style={{ aspectRatio: `${width} / ${height}` }}
+      style={
+        {
+          aspectRatio: `${width} / ${height}`,
+          "--artwork-scale": 1,
+        } as React.CSSProperties
+      }
     >
       <iframe
         src={`/preview/${slug}/index.html`}
@@ -46,7 +71,7 @@ export function ArtworkFrame({
           "absolute top-0 left-0 origin-top-left border-0",
           mode === "card" && "pointer-events-none",
         )}
-        style={{ transform: `scale(calc(100cqw / ${width}))` }}
+        style={mode === "card" ? { transform: "scale(var(--artwork-scale))" } : undefined}
       />
     </div>
   );

@@ -48,6 +48,10 @@ function readMeta(slug: string): Artwork {
     );
   }
 
+  if (!m.tags.every((t) => typeof t === "string" && t.length > 0)) {
+    throw new Error(`Artwork "${slug}": meta.json field "tags" must contain only non-empty strings`);
+  }
+
   return {
     slug,
     title: m.title,
@@ -68,7 +72,7 @@ export function getAllArtworks(): Artwork[] {
 
   const artworks = slugs.map(readMeta);
 
-  return artworks.sort((a, b) => b.date.localeCompare(a.date));
+  return artworks.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
 }
 
 export function getArtwork(slug: string): ArtworkWithSource {

@@ -8,7 +8,12 @@ import path from "node:path";
 
 const PREVIEW_DIR = path.join(process.cwd(), "public", "preview");
 const SLUG_RE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-const URL_RE = /\bhttps?:\/\/\S+/gi;
+// Matches explicit http(s) URLs anywhere, plus protocol-relative URLs
+// (`//host/path`) when they appear where a browser would actually resolve
+// them as a resource reference: `src="//..."`, `href="//..."`, `url(//...)`.
+// The stop-char class excludes quotes/angles/parens so the match doesn't
+// swallow trailing markup.
+const URL_RE = /\bhttps?:\/\/[^\s"'<>)]+|(?<=["'(=])\/\/[^\s"'<>)]+/gi;
 
 const errors = [];
 
@@ -45,13 +50,14 @@ for (const slug of slugs) {
   const htmlPath = path.join(dir, "index.html");
   const cssPath = path.join(dir, "style.css");
 
-  const hasMeta = fs.existsSync(metaPath);
-  const hasHtml = fs.existsSync(htmlPath);
-  const hasCss = fs.existsSync(cssPath);
+  const isFile = (p) => fs.existsSync(p) && fs.statSync(p).isFile();
+  const hasMeta = isFile(metaPath);
+  const hasHtml = isFile(htmlPath);
+  const hasCss = isFile(cssPath);
 
-  if (!hasMeta) fail(slug, "meta.json", "file is missing");
-  if (!hasHtml) fail(slug, "index.html", "file is missing");
-  if (!hasCss) fail(slug, "style.css", "file is missing");
+  if (!hasMeta) fail(slug, "meta.json", fs.existsSync(metaPath) ? "is not a regular file" : "file is missing");
+  if (!hasHtml) fail(slug, "index.html", fs.existsSync(htmlPath) ? "is not a regular file" : "file is missing");
+  if (!hasCss) fail(slug, "style.css", fs.existsSync(cssPath) ? "is not a regular file" : "file is missing");
 
   if (hasMeta) {
     let meta;
@@ -73,6 +79,8 @@ for (const slug of slugs) {
       }
       if (!Array.isArray(meta.tags) || meta.tags.length === 0) {
         fail(slug, "meta.json", `field "tags" must be a non-empty array`);
+      } else if (!meta.tags.every((t) => typeof t === "string" && t.length > 0)) {
+        fail(slug, "meta.json", `field "tags" must contain only non-empty strings`);
       }
       if (typeof meta.date !== "string" || Number.isNaN(Date.parse(meta.date))) {
         fail(slug, "meta.json", `field "date" does not parse as a date`);
