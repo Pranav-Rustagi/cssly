@@ -1,0 +1,9 @@
+{
+  "title": "Quilted Terrazzo",
+  "description": "A 10x10 terrazzo mosaic where every tile draws its own fleck pattern from a cycling set of nth-child rules, with occasional rings, folds, and mortar lines layered on top. A genuinely long stylesheet, not a repeated background-image.",
+  "tags": ["pattern", "grid", "terrazzo", "nth-child"],
+  "date": "2026-08-09",
+  "featured": false,
+  "viewport": { "width": 1000, "height": 1000 },
+  "author": { "name": "Pranav Rustagi", "github": "Pranav-Rustagi" }
+}
