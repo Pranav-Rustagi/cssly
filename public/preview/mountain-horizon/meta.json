@@ -1,0 +1,9 @@
+{
+  "title": "Mountain Horizon",
+  "description": "A sunset over three layered mountain ridges, each a hand-plotted clip-path silhouette, sitting on a five-stop gradient sky. Composed wide to match how a horizon actually reads.",
+  "tags": ["landscape", "gradient", "clip-path", "wide"],
+  "date": "2026-08-12",
+  "featured": false,
+  "viewport": { "width": 1600, "height": 500 },
+  "author": { "name": "Pranav Rustagi", "github": "Pranav-Rustagi" }
+}

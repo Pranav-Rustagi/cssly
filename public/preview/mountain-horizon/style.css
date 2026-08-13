@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #1a0f1f;
+}
+
+.scene {
+  position: relative;
+  width: 1600px;
+  height: 500px;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    #1a0f2e 0%,
+    #3a1a4a 25%,
+    #a1436b 50%,
+    #e77a4e 72%,
+    #ffcf6e 100%
+  );
+}
+
+.sun {
+  position: absolute;
+  left: 50%;
+  top: 62%;
+  width: 220px;
+  height: 220px;
+  margin-left: -110px;
+  margin-top: -110px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 40%, #fff3cf 0%, #ffce6b 45%, #ff8a5c 100%);
+  box-shadow: 0 0 120px 40px rgba(255, 150, 90, 0.35);
+}
+
+.ridge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.ridge--far {
+  height: 220px;
+  background: #4a2354;
+  opacity: 0.85;
+  clip-path: polygon(
+    0% 100%, 0% 60%, 8% 40%, 15% 55%, 24% 30%, 33% 50%, 41% 25%,
+    50% 48%, 58% 20%, 67% 45%, 76% 28%, 85% 50%, 93% 35%, 100% 55%, 100% 100%
+  );
+}
+
+.ridge--mid {
+  height: 260px;
+  background: #2c1240;
+  opacity: 0.9;
+  clip-path: polygon(
+    0% 100%, 0% 70%, 10% 45%, 20% 65%, 30% 38%, 40% 60%, 50% 32%,
+    60% 58%, 70% 35%, 80% 62%, 90% 40%, 100% 60%, 100% 100%
+  );
+}
+
+.ridge--near {
+  height: 180px;
+  background: #180a28;
+  clip-path: polygon(
+    0% 100%, 0% 75%, 12% 55%, 22% 72%, 35% 48%, 48% 70%, 60% 45%,
+    72% 68%, 85% 50%, 100% 65%, 100% 100%
+  );
+}

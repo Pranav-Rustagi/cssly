@@ -1,0 +1,9 @@
+{
+  "title": "Aurora Veil",
+  "description": "A still night sky rendered from three blurred conic gradients in screen-blend, with a hand-placed starfield and a fine grain overlay to keep the color bands from looking flat.",
+  "tags": ["gradient", "landscape", "static", "night-sky"],
+  "date": "2026-08-10",
+  "featured": true,
+  "viewport": { "width": 1200, "height": 800 },
+  "author": { "name": "Pranav Rustagi", "github": "Pranav-Rustagi" }
+}

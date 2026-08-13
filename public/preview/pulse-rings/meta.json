@@ -1,0 +1,9 @@
+{
+  "title": "Pulse Rings",
+  "description": "A radar-style ping: four rings expand and fade on staggered delays around a breathing core, looping forever with pure CSS keyframes.",
+  "tags": ["animation", "rings", "loop", "keyframes"],
+  "date": "2026-08-11",
+  "featured": true,
+  "viewport": { "width": 800, "height": 800 },
+  "author": { "name": "Pranav Rustagi", "github": "Pranav-Rustagi" }
+}
