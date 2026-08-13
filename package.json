@@ -7,9 +7,10 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run validate:art && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "validate:art": "node scripts/validate-artworks.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
