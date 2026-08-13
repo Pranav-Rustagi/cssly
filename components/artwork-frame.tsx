@@ -25,6 +25,12 @@ interface ArtworkFrameProps {
  * (computed value falls back to `none`), leaving the artwork unscaled. A
  * ResizeObserver on the wrapper computes the ratio in JS instead and writes
  * it to a CSS custom property the iframe's transform reads.
+ *
+ * "card" scales freely both up and down to exactly fill whatever container
+ * it's given (a grid tile). "full" caps the wrapper at the artwork's native
+ * width via `max-width` and clamps the computed scale to `min(1, ratio)`, so
+ * the piece never blows up past its own design size — it only shrinks on
+ * viewports narrower than that.
  */
 export function ArtworkFrame({
   slug,
@@ -37,12 +43,12 @@ export function ArtworkFrame({
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (mode !== "card") return;
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
     const observer = new ResizeObserver(([entry]) => {
-      const scale = entry.contentRect.width / width;
+      const ratio = entry.contentRect.width / width;
+      const scale = mode === "full" ? Math.min(1, ratio) : ratio;
       wrapper.style.setProperty("--artwork-scale", String(scale));
     });
     observer.observe(wrapper);
@@ -56,6 +62,8 @@ export function ArtworkFrame({
       style={
         {
           aspectRatio: `${width} / ${height}`,
+          maxWidth: mode === "full" ? `${width}px` : undefined,
+          marginInline: mode === "full" ? "auto" : undefined,
           "--artwork-scale": 1,
         } as React.CSSProperties
       }
@@ -71,7 +79,7 @@ export function ArtworkFrame({
           "absolute top-0 left-0 origin-top-left border-0",
           mode === "card" && "pointer-events-none",
         )}
-        style={mode === "card" ? { transform: "scale(var(--artwork-scale))" } : undefined}
+        style={{ transform: "scale(var(--artwork-scale))" }}
       />
     </div>
   );
