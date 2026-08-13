@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
 import { Maximize2 } from "lucide-react";
 
-import { getAllArtworks } from "@/lib/artworks";
+import { getAllArtworks, getArtwork } from "@/lib/artworks";
 import { ArtworkFrame } from "@/components/artwork-frame";
+import { SourceViewer } from "@/components/source-viewer";
 import { Section } from "@/components/section";
 import { Heading } from "@/components/heading";
 import { DescriptionText } from "@/components/text";
@@ -28,6 +29,8 @@ export default async function ArtworkPage({ params }: ArtworkPageProps) {
 
   const artwork = getAllArtworks().find((a) => a.slug === slug);
   if (!artwork) notFound();
+
+  const { html, css } = getArtwork(slug);
 
   return (
     <main className="flex flex-1 flex-col gap-10 py-10">
@@ -74,6 +77,14 @@ export default async function ArtworkPage({ params }: ArtworkPageProps) {
             mode="full"
           />
         </div>
+      </Section>
+
+      <Section type="secondary">
+        <Heading as="h2" text="Source" />
+        <DescriptionText className="mt-1 mb-4">
+          The exact HTML and CSS behind this piece — copy it, drop it in a blank file, run it.
+        </DescriptionText>
+        <SourceViewer html={html} css={css} />
       </Section>
     </main>
   );

@@ -118,3 +118,15 @@
     @apply bg-bg text-text;
   }
 }
+
+/* Shiki's dual-theme output (see components/source-viewer.tsx) writes the
+ * light theme as an inline `color`/`background-color` and the dark theme as
+ * a `--shiki-dark`/`--shiki-dark-bg` custom property per token, meant to be
+ * switched on by a `.dark` ancestor class. This project themes via
+ * `[data-theme="dark"]`, not a `.dark` class, so the switch is keyed off
+ * that attribute instead. Backgrounds are stripped via `!bg-transparent` in
+ * the source viewer itself, so only text colour needs switching here. */
+[data-theme="dark"] .shiki,
+[data-theme="dark"] .shiki span {
+  color: var(--shiki-dark) !important;
+}
