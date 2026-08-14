@@ -19,6 +19,7 @@ export function Section({
   return (
     <section
       className={cn(
+        "w-full overflow-x-hidden text-text",
         type === "secondary" ? "bg-bg-alt" : "bg-bg",
         "py-36 px-6 md:py-48 md:px-24 lg:px-48",
         className

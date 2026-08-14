@@ -36,7 +36,7 @@ function renderWithHighlights(text: string, highlight: string[]) {
 
   return parts.map((part, i) =>
     highlight.includes(part) ? (
-      <span key={i} className="text-accent">
+      <span key={i} className="font-mono text-accent">
         {part}
       </span>
     ) : (
