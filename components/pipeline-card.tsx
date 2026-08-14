@@ -41,7 +41,7 @@ export function PipelineCard({ entry }: PipelineCardProps) {
             <span className="text-2xl" aria-hidden>
               {entry.emoji}
             </span>
-            <CardTitle className="text-base">{entry.title}</CardTitle>
+            <CardTitle>{entry.title}</CardTitle>
           </div>
         </div>
       </CardHeader>

@@ -17,7 +17,7 @@ export function FeatureCard({ icon: Icon, title, description }: FeatureCardProps
         <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
           <Icon className="size-5" />
         </div>
-        <CardTitle className="text-base">{title}</CardTitle>
+        <CardTitle>{title}</CardTitle>
       </CardHeader>
       <CardContent>
         <DescriptionText>{description}</DescriptionText>

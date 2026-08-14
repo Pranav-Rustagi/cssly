@@ -18,7 +18,7 @@ export function SiteHeader() {
       <div className="container flex flex-wrap items-center justify-between gap-4 py-4">
         <Link
           href="/"
-          className="font-mono text-lg font-bold text-accent outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          className="font-mono text-3xl font-bold text-accent outline-none md:text-4xl focus-visible:ring-2 focus-visible:ring-accent"
         >
           CSSly
         </Link>

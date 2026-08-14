@@ -158,7 +158,7 @@ export default async function ArtworkPage({ params }: ArtworkPageProps) {
           >
             <ArrowLeft className="size-4 shrink-0 text-text-muted transition-colors group-hover:text-accent" />
             <div className="min-w-0">
-              <div className="text-xs text-text-muted">Previous</div>
+              <div className="text-xs text-text-muted md:text-sm">Previous</div>
               <div className="truncate font-medium text-text">{prev.title}</div>
             </div>
           </Link>
@@ -167,7 +167,7 @@ export default async function ArtworkPage({ params }: ArtworkPageProps) {
             className="group flex flex-1 items-center justify-end gap-3 rounded-lg border border-border p-4 text-right transition-colors hover:border-accent"
           >
             <div className="min-w-0">
-              <div className="text-xs text-text-muted">Next</div>
+              <div className="text-xs text-text-muted md:text-sm">Next</div>
               <div className="truncate font-medium text-text">{next.title}</div>
             </div>
             <ArrowRight className="size-4 shrink-0 text-text-muted transition-colors group-hover:text-accent" />

@@ -30,7 +30,7 @@ export function ArtworkCard({ artwork }: ArtworkCardProps) {
           className="aspect-[16/10] w-full border-b border-border"
         />
         <CardHeader className="px-4 pt-4">
-          <CardTitle className="text-base">{artwork.title}</CardTitle>
+          <CardTitle>{artwork.title}</CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col gap-3 px-4 pb-4">
           <DescriptionText className="line-clamp-2">{artwork.description}</DescriptionText>

@@ -57,7 +57,12 @@ export default function Home() {
     <>
       <Section className="py-16 sm:py-24">
         <div className="flex flex-col items-center gap-4 text-center">
-          <Heading as="h1" text="Welcome to CSSly" highlight={["CSSly"]} className="text-4xl sm:text-5xl" />
+          <Heading
+            as="h1"
+            text="Welcome to CSSly"
+            highlight={["CSSly"]}
+            className="text-4xl md:text-6xl lg:text-7xl"
+          />
           <Subtext className="max-w-xl text-lg">
             Explore beautiful designs crafted with pure HTML and CSS
           </Subtext>
