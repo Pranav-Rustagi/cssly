@@ -32,8 +32,8 @@ export function SiteFooter() {
       <div className="container flex flex-col gap-8 py-10">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div className="flex flex-col gap-3">
-            <h2 className="text-sm font-semibold text-text">Quick Links</h2>
-            <nav className="flex flex-col gap-2">
+            <h2 id="footer-quick-links" className="text-sm font-semibold text-text">Quick Links</h2>
+            <nav className="flex flex-col gap-2" aria-labelledby="footer-quick-links">
               {quickLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -47,8 +47,8 @@ export function SiteFooter() {
           </div>
 
           <div className="flex flex-col gap-3">
-            <h2 className="text-sm font-semibold text-text">Connect</h2>
-            <nav className="flex flex-col gap-2">
+            <h2 id="footer-connect" className="text-sm font-semibold text-text">Connect</h2>
+            <nav className="flex flex-col gap-2" aria-labelledby="footer-connect">
               {connectLinks.map((link) => (
                 <a
                   key={link.href}
