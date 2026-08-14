@@ -12,7 +12,7 @@ interface FeatureCardProps {
 /** One tile in the "How CSSly stands out" grid: icon, title, description. */
 export function FeatureCard({ icon: Icon, title, description }: FeatureCardProps) {
   return (
-    <Card className="[--card-spacing:--spacing(8)]">
+    <Card className="[--card-spacing:--spacing(8)] transition-all duration-300 hover:shadow-xl motion-safe:hover:-translate-y-2">
       <CardHeader>
         <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
           <Icon className="size-5" />
