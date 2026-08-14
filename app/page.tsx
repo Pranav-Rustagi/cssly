@@ -68,6 +68,7 @@ export default function Home() {
           </Subtext>
           <Button
             render={<Link href="/gallery">Explore</Link>}
+            nativeButton={false}
             variant="accent"
             size="lg"
             className="mt-4"
@@ -86,7 +87,11 @@ export default function Home() {
           ))}
         </div>
         <div className="mt-8 text-center">
-          <Button render={<Link href="/gallery">View Full Gallery</Link>} variant="outline" />
+          <Button
+            render={<Link href="/gallery">View Full Gallery</Link>}
+            nativeButton={false}
+            variant="outline"
+          />
         </div>
       </Section>
 
@@ -118,6 +123,7 @@ export default function Home() {
               Read More <ArrowRight className="size-4" />
             </Link>
           }
+          nativeButton={false}
           variant="outline"
         />
       </Section>
@@ -190,6 +196,7 @@ export default function Home() {
               Buy me a coffee
             </a>
           }
+          nativeButton={false}
           variant="accent"
           size="lg"
         />
