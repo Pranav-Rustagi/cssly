@@ -24,7 +24,8 @@ const connectLinks = [
 /** Server component footer: quick links, connect links, and a copyright bar.
  * External links open in a new tab with `rel="noreferrer"`. */
 export function SiteFooter() {
-  const year = new Date().getFullYear();
+  // Publication year — fixed literal, not computed at runtime, to prevent stale values after year boundary
+  const year = 2026;
 
   return (
     <footer className="border-t border-border bg-bg-alt">
