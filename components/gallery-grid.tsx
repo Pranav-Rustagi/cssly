@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { X } from "lucide-react";
 
@@ -45,7 +45,16 @@ export function GalleryGrid({ artworks, tags }: GalleryGridProps) {
 
   const urlQuery = searchParams.get("q") ?? "";
   const selectedTags = useMemo(() => new Set(searchParams.getAll("tag")), [searchParams]);
-  const sort = (searchParams.get("sort") as SortOrder | null) ?? "newest";
+  const rawSort = searchParams.get("sort");
+  const sort = SORT_OPTIONS.some((option) => option.value === rawSort)
+    ? (rawSort as SortOrder)
+    : "newest";
+
+  // Always holds the latest `searchParams`, so a debounced write scheduled
+  // against an older render merges onto whatever the URL is by the time the
+  // timer fires, instead of clobbering filter changes made in between.
+  const searchParamsRef = useRef(searchParams);
+  searchParamsRef.current = searchParams;
 
   // Local, immediate state for the text box — debounced before it hits the
   // URL so we don't push a history-affecting update per keystroke. Synced
@@ -66,6 +75,11 @@ export function GalleryGrid({ artworks, tags }: GalleryGridProps) {
     if (searchInput === urlQuery) return;
     const timer = setTimeout(() => updateParams({ q: searchInput || null }), SEARCH_DEBOUNCE_MS);
     return () => clearTimeout(timer);
+    // Intentionally excludes `updateParams`/`urlQuery`: re-running this
+    // effect on every render (updateParams is recreated each time) would
+    // restart the debounce on every keystroke-unrelated update. `updateParams`
+    // reads `searchParamsRef` (always current), so the pending write still
+    // merges onto the latest URL state even when this effect doesn't re-run.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchInput]);
 
@@ -74,7 +88,7 @@ export function GalleryGrid({ artworks, tags }: GalleryGridProps) {
     tag?: string[] | null;
     sort?: string | null;
   }) {
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams(searchParamsRef.current.toString());
 
     if ("q" in changes) {
       if (changes.q) params.set("q", changes.q);
