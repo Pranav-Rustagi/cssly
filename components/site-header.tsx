@@ -22,8 +22,8 @@ export function SiteHeader() {
         >
           CSSly
         </Link>
-        <div className="flex flex-1 flex-wrap items-center justify-end gap-4">
-          <nav className="flex flex-wrap items-center gap-4" aria-label="Main navigation">
+        <div className="flex flex-1 flex-wrap items-center justify-end gap-4 md:gap-8">
+          <nav className="flex flex-wrap items-center gap-4 md:gap-8" aria-label="Main navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
