@@ -3,6 +3,8 @@ import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import { THEME_COLOR_META_ID, THEME_COLORS } from "@/lib/theme";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 
 // Production domain for resolving per-page canonical URLs and OG images.
 // Override with NEXT_PUBLIC_SITE_URL for preview deployments.
@@ -33,7 +35,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className="min-h-full flex flex-col">
         <TooltipProvider>
-          {children}
+          <SiteHeader />
+          <main className="flex flex-1 flex-col">{children}</main>
+          <SiteFooter />
           <Toaster />
         </TooltipProvider>
       </body>
