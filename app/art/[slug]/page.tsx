@@ -70,7 +70,7 @@ export default async function ArtworkPage({ params }: ArtworkPageProps) {
   const { html, css } = getArtwork(slug);
 
   return (
-    <div className="flex flex-1 flex-col gap-10 py-10">
+    <div className="flex flex-1 flex-col gap-10">
       <Section>
         <div className="flex flex-col gap-6">
           <div className="flex flex-wrap items-start justify-between gap-4">

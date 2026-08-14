@@ -29,10 +29,10 @@ export function ArtworkCard({ artwork }: ArtworkCardProps) {
           mode="card"
           className="aspect-[16/10] w-full border-b border-border"
         />
-        <CardHeader className="px-4 pt-4">
+        <CardHeader className="px-6 pt-6">
           <CardTitle>{artwork.title}</CardTitle>
         </CardHeader>
-        <CardContent className="flex flex-col gap-3 px-4 pb-4">
+        <CardContent className="flex flex-col gap-3 px-6 pb-6">
           <DescriptionText className="line-clamp-2">{artwork.description}</DescriptionText>
           <div className="flex flex-wrap gap-1.5">
             {artwork.tags.map((tag) => (

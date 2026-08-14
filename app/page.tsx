@@ -55,7 +55,7 @@ export default function Home() {
 
   return (
     <>
-      <Section className="py-16 sm:py-24">
+      <Section>
         <div className="flex flex-col items-center gap-4 text-center">
           <Heading
             as="h1"
@@ -75,7 +75,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section type="secondary" className="py-16">
+      <Section type="secondary">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <Heading as="h2" text="Featured Designs" />
@@ -83,14 +83,14 @@ export default function Home() {
           </div>
           <Button render={<Link href="/gallery">View Full Gallery</Link>} variant="outline" />
         </div>
-        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((artwork) => (
             <ArtworkCard key={artwork.slug} artwork={artwork} />
           ))}
         </div>
       </Section>
 
-      <Section className="py-16">
+      <Section>
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
           <Heading as="h2" text="About CSSly" highlight={["CSSly"]} />
           <DescriptionText>
@@ -122,9 +122,9 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section type="secondary" className="py-16">
+      <Section type="secondary">
         <Heading as="h2" text="How CSSly stands out" highlight={["CSSly"]} className="text-center" />
-        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-12 lg:grid-cols-4">
           {features.map((feature) => (
             <FeatureCard
               key={feature.title}
@@ -136,12 +136,12 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section className="py-16">
+      <Section>
         <Heading as="h2" text="In the works" />
         <Subtext className="mt-2">
           Designs I&apos;m currently working on and planning to create
         </Subtext>
-        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {pipeline.length > 0 ? (
             pipeline.map((entry) => <PipelineCard key={entry.title} entry={entry} />)
           ) : (
@@ -152,7 +152,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section type="secondary" className="py-16">
+      <Section type="secondary">
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
           <Heading as="h2" text="Support CSSly" highlight={["CSSly"]} />
           <DescriptionText>

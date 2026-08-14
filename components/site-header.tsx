@@ -15,7 +15,7 @@ const navLinks = [
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg">
-      <div className="container flex flex-wrap items-center justify-between gap-4 py-4">
+      <div className="container flex flex-wrap items-center justify-between gap-4 py-5 px-4 md:px-8">
         <Link
           href="/"
           className="font-mono text-3xl font-bold text-accent outline-none md:text-4xl focus-visible:ring-2 focus-visible:ring-accent"

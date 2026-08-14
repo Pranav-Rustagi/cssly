@@ -34,7 +34,7 @@ interface PipelineCardProps {
 /** One card in the "In the works" pipeline list. */
 export function PipelineCard({ entry }: PipelineCardProps) {
   return (
-    <Card>
+    <Card className="[--card-spacing:--spacing(6)]">
       <CardHeader>
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-2">

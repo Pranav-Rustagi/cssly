@@ -18,7 +18,11 @@ export function Section({
 }: SectionProps) {
   return (
     <section
-      className={cn(type === "secondary" ? "bg-bg-alt" : "bg-bg", className)}
+      className={cn(
+        type === "secondary" ? "bg-bg-alt" : "bg-bg",
+        "py-36 px-6 md:py-48 md:px-24 lg:px-48",
+        className
+      )}
     >
       <div className={cn("container", innerClassName)}>{children}</div>
     </section>

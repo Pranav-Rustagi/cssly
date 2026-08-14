@@ -29,7 +29,7 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-border bg-bg-alt">
-      <div className="container flex flex-col gap-8 py-10">
+      <div className="container flex flex-col gap-8 px-4 py-24 pb-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div className="flex flex-col gap-3">
             <h2 id="footer-quick-links" className="text-sm font-semibold text-text">Quick Links</h2>
