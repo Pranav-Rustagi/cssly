@@ -17,8 +17,11 @@ interface ArtworkCardProps {
  * how differently shaped each artwork's own viewport is. */
 export function ArtworkCard({ artwork }: ArtworkCardProps) {
   return (
-    <Card className="group/artwork-card overflow-hidden p-0 transition-colors hover:border-accent">
-      <Link href={`/art/${artwork.slug}`} className="flex flex-col focus:outline-none">
+    <Card className="group/artwork-card overflow-hidden p-0 transition-colors hover:border-accent has-[a:focus-visible]:border-accent">
+      <Link
+        href={`/art/${artwork.slug}`}
+        className="flex flex-col outline-none focus-visible:ring-2 focus-visible:ring-accent"
+      >
         <ArtworkFrame
           slug={artwork.slug}
           title={artwork.title}

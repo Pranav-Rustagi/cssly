@@ -56,6 +56,17 @@ export function ArtworkFrame({
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
+    // Card mode is server-rendered, so a fast iframe load can fire before
+    // hydration attaches `onLoad`, permanently stranding the skeleton (the
+    // sandboxed iframe has an opaque origin, so there's no `contentDocument`
+    // fallback to poll). 1.5s is well past a hydrated fast-path load but
+    // short enough that a missed event self-heals almost unnoticeably.
+    if (mode !== "card") return;
+    const timer = setTimeout(() => setLoaded(true), 1500);
+    return () => clearTimeout(timer);
+  }, [mode]);
+
+  useEffect(() => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
@@ -104,7 +115,7 @@ export function ArtworkFrame({
         className={cn(
           "border-0",
           mode === "full" && "absolute top-0 left-0 origin-top-left",
-          mode === "card" && "pointer-events-none",
+          mode === "card" && "pointer-events-none shrink-0",
           mode === "card" && !loaded && "opacity-0",
         )}
         style={{ transform: "scale(var(--artwork-scale))" }}
