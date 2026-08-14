@@ -20,7 +20,7 @@ export default function GalleryPage() {
   const tags = getAllTags();
 
   return (
-    <main className="flex flex-1 flex-col gap-8 py-10">
+    <div className="flex flex-1 flex-col gap-8 py-10">
       <Section>
         <Heading as="h1" text="The gallery" highlight={["gallery"]} />
         <Subtext className="mt-2">
@@ -33,6 +33,6 @@ export default function GalleryPage() {
           <GalleryGrid artworks={artworks} tags={tags} />
         </Suspense>
       </Section>
-    </main>
+    </div>
   );
 }
