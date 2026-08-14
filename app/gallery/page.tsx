@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
-import { getAllArtworks } from "@/lib/artworks";
+import { getAllArtworks, getAllTags } from "@/lib/artworks";
 import { Section } from "@/components/section";
 import { Heading } from "@/components/heading";
 import { Subtext } from "@/components/text";
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 // prerenderable. All filter/sort state lives in the client and the URL.
 export default function GalleryPage() {
   const artworks = getAllArtworks();
+  const tags = getAllTags();
 
   return (
     <main className="flex flex-1 flex-col gap-8 py-10">
@@ -27,7 +29,9 @@ export default function GalleryPage() {
       </Section>
 
       <Section>
-        <GalleryGrid artworks={artworks} />
+        <Suspense>
+          <GalleryGrid artworks={artworks} tags={tags} />
+        </Suspense>
       </Section>
     </main>
   );
