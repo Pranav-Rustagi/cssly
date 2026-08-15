@@ -41,7 +41,7 @@ export function ThemeToggle() {
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       onClick={toggle}
       suppressHydrationWarning
-      className="flex size-10 shrink-0 items-center justify-center rounded-full bg-text text-bg outline-none transition-all duration-300 hover:-rotate-30 focus-visible:ring-2 focus-visible:ring-accent"
+      className="flex size-10 shrink-0 items-center justify-center rounded-full bg-text text-bg cursor-pointer outline-none transition-all duration-300 hover:-rotate-30 focus-visible:ring-2 focus-visible:ring-accent"
     >
       {/* Both icons render always; visibility is driven purely by the
        * `dark:` variant (mapped to [data-theme=dark]) so there's no

@@ -90,7 +90,8 @@ export default function Home() {
           <Button
             render={<Link href="/gallery">View Full Gallery</Link>}
             nativeButton={false}
-            variant="outline"
+            variant="accent"
+            size="lg"
           />
         </div>
       </Section>
@@ -124,7 +125,8 @@ export default function Home() {
             </Link>
           }
           nativeButton={false}
-          variant="outline"
+          variant="accent"
+          size="lg"
         />
       </Section>
 
