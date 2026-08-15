@@ -1,24 +1,29 @@
 import Link from "next/link";
-import { Code2, Briefcase, PenLine } from "lucide-react";
+import { Images, Info, Mail, Lock, FileText } from "lucide-react";
 
-import { DescriptionText } from "@/components/text";
+import { DevToIcon, GitHubIcon, LinkedInIcon } from "@/components/brand-icons";
 
 const quickLinks = [
-  { href: "/gallery", label: "Gallery" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/gallery", label: "Gallery", icon: Images },
+  { href: "/about", label: "About", icon: Info },
+  { href: "/contact", label: "Contact", icon: Mail },
 ];
 
 // lucide-react ships no brand/logo icons (removed upstream), so each
-// platform gets a generic icon that fits its purpose instead.
+// platform gets its real mark from components/brand-icons instead.
 const connectLinks = [
-  { href: "https://github.com/Pranav-Rustagi", label: "GitHub", icon: Code2 },
+  { href: "https://github.com/Pranav-Rustagi", label: "GitHub", icon: GitHubIcon },
   {
     href: "https://www.linkedin.com/in/pranav-rustagi/",
     label: "LinkedIn",
-    icon: Briefcase,
+    icon: LinkedInIcon,
   },
-  { href: "https://dev.to/pranav-rustagi", label: "Dev.to", icon: PenLine },
+  { href: "https://dev.to/pranav-rustagi", label: "Dev.to", icon: DevToIcon },
+];
+
+const otherLinks = [
+  { href: "/privacy", label: "Privacy Policy", icon: Lock },
+  { href: "/terms", label: "Terms of Service", icon: FileText },
 ];
 
 /** Server component footer: quick links, connect links, and a copyright bar.
@@ -28,34 +33,35 @@ export function SiteFooter() {
   const year = 2026;
 
   return (
-    <footer className="border-t border-border bg-bg-alt">
-      <div className="container flex flex-col gap-8 py-10">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-          <div className="flex flex-col gap-3">
-            <h2 id="footer-quick-links" className="text-sm font-semibold text-text">Quick Links</h2>
-            <nav className="flex flex-col gap-2" aria-labelledby="footer-quick-links">
+    <footer className="border-t border-border bg-surface text-text">
+      <div className="container px-8 py-24 pb-8">
+        <div className="flex flex-wrap gap-10 md:justify-around mb-10">
+          <div>
+            <h2 id="footer-quick-links" className="flex items-center gap-2 text-lg font-bold text-text md:text-xl mb-4">Quick Links</h2>
+            <nav className="flex flex-col gap-3" aria-labelledby="footer-quick-links">
               {quickLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-text-muted outline-none transition-colors hover:text-text focus-visible:ring-2 focus-visible:ring-accent"
+                  className="inline-flex items-center gap-2 text-xs md:text-sm lg:text-base text-text outline-none transition-colors hover:text-accent focus-visible:ring-2 focus-visible:ring-accent"
                 >
+                  <link.icon className="size-4" />
                   {link.label}
                 </Link>
               ))}
             </nav>
           </div>
 
-          <div className="flex flex-col gap-3">
-            <h2 id="footer-connect" className="text-sm font-semibold text-text">Connect</h2>
-            <nav className="flex flex-col gap-2" aria-labelledby="footer-connect">
+          <div>
+            <h2 id="footer-connect" className="flex items-center gap-2 text-lg font-bold text-text md:text-xl mb-4">Connect</h2>
+            <nav className="flex flex-col gap-3" aria-labelledby="footer-connect">
               {connectLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-text-muted outline-none transition-colors hover:text-text focus-visible:ring-2 focus-visible:ring-accent"
+                  className="inline-flex items-center gap-2 text-xs md:text-sm lg:text-base text-text outline-none transition-colors hover:text-accent focus-visible:ring-2 focus-visible:ring-accent"
                 >
                   <link.icon className="size-4" />
                   {link.label}
@@ -63,11 +69,27 @@ export function SiteFooter() {
               ))}
             </nav>
           </div>
+
+          <div>
+            <h2 id="footer-other-links" className="flex items-center gap-2 text-lg font-bold text-text md:text-xl mb-4">Other Links</h2>
+            <nav className="flex flex-col gap-3" aria-labelledby="footer-other-links">
+              {otherLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="inline-flex items-center gap-2 text-xs md:text-sm lg:text-base text-text outline-none transition-colors hover:text-accent focus-visible:ring-2 focus-visible:ring-accent"
+                >
+                  <link.icon className="size-4" />
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
         </div>
 
-        <div className="flex flex-col gap-2 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <DescriptionText>Copyright © {year} CSSly</DescriptionText>
-          <DescriptionText>All designs created with pure HTML & CSS</DescriptionText>
+        <div className="mt-16 flex flex-col-reverse justify-between gap-4 border-t border-border pt-8 text-center text-xs md:flex-row md:text-sm lg:px-16">
+          <div><span>Copyright © {year} CSSly</span></div>
+          <div><span>All designs created with pure HTML & CSS</span></div>
         </div>
       </div>
     </footer>

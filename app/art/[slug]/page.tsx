@@ -70,7 +70,7 @@ export default async function ArtworkPage({ params }: ArtworkPageProps) {
   const { html, css } = getArtwork(slug);
 
   return (
-    <div className="flex flex-1 flex-col gap-10 py-10">
+    <div className="flex flex-1 flex-col gap-10">
       <Section>
         <div className="flex flex-col gap-6">
           <div className="flex flex-wrap items-start justify-between gap-4">
@@ -158,7 +158,7 @@ export default async function ArtworkPage({ params }: ArtworkPageProps) {
           >
             <ArrowLeft className="size-4 shrink-0 text-text-muted transition-colors group-hover:text-accent" />
             <div className="min-w-0">
-              <div className="text-xs text-text-muted">Previous</div>
+              <div className="text-xs text-text-muted md:text-sm">Previous</div>
               <div className="truncate font-medium text-text">{prev.title}</div>
             </div>
           </Link>
@@ -167,7 +167,7 @@ export default async function ArtworkPage({ params }: ArtworkPageProps) {
             className="group flex flex-1 items-center justify-end gap-3 rounded-lg border border-border p-4 text-right transition-colors hover:border-accent"
           >
             <div className="min-w-0">
-              <div className="text-xs text-text-muted">Next</div>
+              <div className="text-xs text-text-muted md:text-sm">Next</div>
               <div className="truncate font-medium text-text">{next.title}</div>
             </div>
             <ArrowRight className="size-4 shrink-0 text-text-muted transition-colors group-hover:text-accent" />

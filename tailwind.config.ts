@@ -28,6 +28,10 @@ const config: Config = {
           foreground: "var(--accent-foreground)",
         },
         "accent-hover": "var(--color-accent-hover)",
+        "accent-solid": {
+          DEFAULT: "var(--color-accent-solid)",
+          foreground: "var(--color-accent-solid-foreground)",
+        },
 
         // subtle neutral hover/active background for shadcn primitives
         // (dropdown-menu, select, …) — never the brand accent above

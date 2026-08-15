@@ -3,7 +3,6 @@
 import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import { THEME_COLOR_META_ID, THEME_COLORS } from "@/lib/theme";
 
 type Theme = "light" | "dark";
@@ -36,20 +35,19 @@ export function ThemeToggle() {
   const isDark = theme === "dark";
 
   return (
-    <Button
+    <button
       type="button"
-      variant="outline"
-      size="icon"
       aria-pressed={isDark}
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       onClick={toggle}
       suppressHydrationWarning
+      className="flex size-10 shrink-0 items-center justify-center rounded-full bg-text text-bg cursor-pointer outline-none transition-all duration-300 hover:-rotate-30 focus-visible:ring-2 focus-visible:ring-accent"
     >
       {/* Both icons render always; visibility is driven purely by the
        * `dark:` variant (mapped to [data-theme=dark]) so there's no
        * client/server mismatch from conditional icon rendering. */}
-      <Moon className="size-4 dark:hidden" />
-      <Sun className="hidden size-4 dark:block" />
-    </Button>
+      <Moon className="size-5 dark:hidden" />
+      <Sun className="hidden size-5 dark:block" />
+    </button>
   );
 }

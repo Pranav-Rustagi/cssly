@@ -1,6 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { DescriptionText } from "@/components/text";
 
 interface FeatureCardProps {
@@ -12,16 +12,10 @@ interface FeatureCardProps {
 /** One tile in the "How CSSly stands out" grid: icon, title, description. */
 export function FeatureCard({ icon: Icon, title, description }: FeatureCardProps) {
   return (
-    <Card>
-      <CardHeader>
-        <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
-          <Icon className="size-5" />
-        </div>
-        <CardTitle className="text-base">{title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <DescriptionText>{description}</DescriptionText>
-      </CardContent>
+    <Card className="gap-0 p-8 shadow-md transition-all duration-300 hover:shadow-lg motion-safe:hover:-translate-y-2">
+      <Icon className="mb-2 size-6 text-accent md:mb-4 md:size-9" />
+      <h3 className="mb-2 text-lg font-bold text-text md:mb-3 md:text-xl">{title}</h3>
+      <DescriptionText className="text-xs md:text-sm">{description}</DescriptionText>
     </Card>
   );
 }

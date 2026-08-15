@@ -15,20 +15,20 @@ const navLinks = [
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg">
-      <div className="container flex flex-wrap items-center justify-between gap-4 py-4">
+      <div className="container flex flex-wrap items-center justify-between gap-4 py-5 px-4 md:px-8">
         <Link
           href="/"
-          className="font-mono text-lg font-bold text-accent outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          className="font-mono text-3xl font-bold text-accent outline-none md:text-4xl focus-visible:ring-2 focus-visible:ring-accent"
         >
           CSSly
         </Link>
-        <div className="flex flex-1 flex-wrap items-center justify-end gap-4">
-          <nav className="flex flex-wrap items-center gap-4" aria-label="Main navigation">
+        <div className="flex flex-1 flex-wrap items-center justify-end gap-4 md:gap-8">
+          <nav className="flex flex-wrap items-center gap-4 md:gap-8" aria-label="Main navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-text-muted outline-none transition-colors hover:text-text focus-visible:ring-2 focus-visible:ring-accent"
+                className="text-sm font-medium text-text outline-none transition-colors hover:text-accent focus-visible:ring-2 focus-visible:ring-accent"
               >
                 {link.label}
               </Link>

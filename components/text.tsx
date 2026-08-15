@@ -10,7 +10,7 @@ interface TextProps {
 /** Muted lead-in text, sitting just under a heading. */
 export function Subtext({ children, className }: TextProps) {
   return (
-    <p className={cn("text-base font-medium text-text-muted", className)}>
+    <p className={cn("text-center text-base text-text md:text-xl", className)}>
       {children}
     </p>
   );
@@ -19,7 +19,7 @@ export function Subtext({ children, className }: TextProps) {
 /** Longer-form body copy. */
 export function DescriptionText({ children, className }: TextProps) {
   return (
-    <p className={cn("text-sm leading-relaxed text-text-muted", className)}>
+    <p className={cn("text-base leading-relaxed text-text md:text-lg", className)}>
       {children}
     </p>
   );
