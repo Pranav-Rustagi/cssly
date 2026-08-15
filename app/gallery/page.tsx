@@ -20,19 +20,17 @@ export default function GalleryPage() {
   const tags = getAllTags();
 
   return (
-    <div className="flex flex-1 flex-col gap-8">
-      <Section>
+    <Section spacing="compact">
+      <div className="text-center mb-8 md:mb-16">
         <Heading as="h1" text="The gallery" highlight={["gallery"]} />
         <Subtext className="mt-2">
           Every piece, running live, no screenshots. Search it, tag it, sort it.
         </Subtext>
-      </Section>
+      </div>
 
-      <Section>
-        <Suspense>
-          <GalleryGrid artworks={artworks} tags={tags} />
-        </Suspense>
-      </Section>
-    </div>
+      <Suspense>
+        <GalleryGrid artworks={artworks} tags={tags} />
+      </Suspense>
+    </Section>
   );
 }
