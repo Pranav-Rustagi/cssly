@@ -19,7 +19,7 @@ export function Subtext({ children, className }: TextProps) {
 /** Longer-form body copy. */
 export function DescriptionText({ children, className }: TextProps) {
   return (
-    <p className={cn("mx-auto text-base leading-relaxed text-text md:text-lg", className)}>
+    <p className={cn("text-base leading-relaxed text-text md:text-lg", className)}>
       {children}
     </p>
   );

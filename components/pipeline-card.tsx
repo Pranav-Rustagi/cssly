@@ -15,7 +15,7 @@ export interface PipelineEntry {
 // the "further along" end of each scale, text-muted for the rest, and the
 // destructive token for "Hard" — never a stock Tailwind palette.
 const statusClass: Record<string, string> = {
-  Done: "bg-accent text-accent-foreground",
+  Done: "bg-accent-solid text-accent-solid-foreground",
   "In Progress": "bg-accent/10 text-accent",
   Planned: "bg-bg-alt text-text-muted",
 };

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowRight, Palette, Code, Wand2, Lightbulb, Coffee } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Palette, Code, Wand2, Lightbulb } from "lucide-react";
 
 import { getAllArtworks } from "@/lib/artworks";
 import { Section } from "@/components/section";
@@ -71,7 +72,7 @@ export default function Home() {
             nativeButton={false}
             variant="accent"
             size="lg"
-            className="mt-4"
+            className="mt-6"
           />
         </div>
       </Section>
@@ -86,7 +87,7 @@ export default function Home() {
             <ArtworkCard key={artwork.slug} artwork={artwork} />
           ))}
         </div>
-        <div className="mt-8 text-center">
+        <div className="mt-12 text-center">
           <Button
             render={<Link href="/gallery">View Full Gallery</Link>}
             nativeButton={false}
@@ -127,6 +128,7 @@ export default function Home() {
           nativeButton={false}
           variant="accent"
           size="lg"
+          className="mt-2"
         />
       </Section>
 
@@ -194,13 +196,19 @@ export default function Home() {
               target="_blank"
               rel="noreferrer"
             >
-              <Coffee className="size-4" />
-              Buy me a coffee
+              <Image
+                src="/bmc-button.svg"
+                alt="Buy Me A Coffee"
+                width={4169}
+                height={913}
+                className="h-6 md:h-8 w-auto"
+              />
             </a>
           }
           nativeButton={false}
           variant="accent"
           size="lg"
+          className="mt-2"
         />
       </Section>
     </>
