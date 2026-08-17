@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import emailjs from "@emailjs/browser";
 
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -26,7 +27,7 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 type Status = "idle" | "sending" | "success" | "error";
 
-/** Client component: holds form state and talks to Web3Forms directly, so
+/** Client component: holds form state and sends via EmailJS directly, so
  * the site stays fully static with no API route in front of it. */
 export function ContactForm() {
   const [name, setName] = useState("");
@@ -55,8 +56,12 @@ export function ContactForm() {
       return;
     }
 
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
-    if (!accessKey) {
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    const toName = process.env.NEXT_PUBLIC_EMAILJS_TO_NAME;
+    const toEmail = process.env.NEXT_PUBLIC_EMAILJS_TO_EMAIL;
+    if (!serviceId || !templateId || !publicKey || !toName || !toEmail) {
       setError(
         "The contact form isn't configured yet — please reach out via the links in the footer instead."
       );
@@ -68,24 +73,32 @@ export function ContactForm() {
     setError(null);
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: accessKey,
-          name,
-          email,
-          type,
-          message,
-        }),
-      });
+      // The existing EmailJS template only knows from_name/to_name/
+      // from_email/to_email/message — there's no slot for the Type
+      // select, so it's folded into the message body as a leading line
+      // rather than sent as a separate param the template would drop.
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: name,
+          to_name: toName,
+          from_email: email,
+          to_email: toEmail,
+          message: `Type: ${type}\n\n${message}`,
+        },
+        publicKey
+      );
 
-      const result = await response.json();
-      if (!response.ok || !result.success) {
-        throw new Error(result.message || "Submission failed.");
+      if (result.status !== 200) {
+        throw new Error(result.text || "Submission failed.");
       }
 
       setStatus("success");
+      setName("");
+      setEmail("");
+      setType(TYPE_OPTIONS[0]);
+      setMessage("");
     } catch {
       setError("Something went wrong sending your message. Please try again.");
       setStatus("error");
