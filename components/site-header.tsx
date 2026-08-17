@@ -21,7 +21,7 @@ export function SiteHeader() {
           href="/"
           className="flex items-center gap-2 font-mono text-3xl font-bold text-accent outline-none md:text-4xl focus-visible:ring-2 focus-visible:ring-accent"
         >
-          <Image src="/logo.png" alt="CSSly logo" width={40} height={40} priority />
+          <Image src="/logo.png" alt="" width={40} height={40} priority />
           CSSly
         </Link>
         <div className="flex flex-1 flex-wrap items-center justify-end gap-4 md:gap-8">
