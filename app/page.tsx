@@ -48,7 +48,6 @@ const pipeline: PipelineEntry[] = [
   },
 ];
 
-// Server component: no hooks, state, or event handlers, so no "use client".
 export default function Home() {
   const featured = getAllArtworks()
     .filter((artwork) => artwork.featured)

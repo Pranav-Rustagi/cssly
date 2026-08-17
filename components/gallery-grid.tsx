@@ -33,11 +33,6 @@ const SORT_OPTIONS: { value: SortOrder; label: string }[] = [
 
 const SEARCH_DEBOUNCE_MS = 300;
 
-/** Search, tag filter and sort for the gallery grid, all in memory. URL is
- * the source of truth for filters (`q`, repeated `tag`, `sort`) so a link
- * like `/gallery?tag=animation` — which the detail page already emits —
- * loads pre-filtered, and the current view stays shareable. Reads
- * `useSearchParams`, so this must render under a `Suspense` boundary. */
 export function GalleryGrid({ artworks, tags }: GalleryGridProps) {
   const router = useRouter();
   const pathname = usePathname();
@@ -50,16 +45,10 @@ export function GalleryGrid({ artworks, tags }: GalleryGridProps) {
     ? (rawSort as SortOrder)
     : "newest";
 
-  // Always holds the latest `searchParams`, so a debounced write scheduled
-  // against an older render merges onto whatever the URL is by the time the
-  // timer fires, instead of clobbering filter changes made in between.
+  // The debounced URL write reads this ref instead of the closed-over `searchParams` so it merges onto the latest URL state rather than a stale one.
   const searchParamsRef = useRef(searchParams);
   searchParamsRef.current = searchParams;
 
-  // Local, immediate state for the text box — debounced before it hits the
-  // URL so we don't push a history-affecting update per keystroke. Synced
-  // from the URL during render (not an effect) when the URL changes out
-  // from under us, eg. a `?q=` deep link or the "clear filters" action.
   const [searchInput, setSearchInput] = useState(urlQuery);
   const [syncedQuery, setSyncedQuery] = useState(urlQuery);
   if (urlQuery !== syncedQuery) {
@@ -67,19 +56,10 @@ export function GalleryGrid({ artworks, tags }: GalleryGridProps) {
     setSearchInput(urlQuery);
   }
 
-  // Debounced write-back to the URL — keystrokes update `searchInput`
-  // immediately (so the input feels responsive) but only land in the URL
-  // (and therefore in `router.replace`, which the address bar reflects)
-  // after the user pauses typing.
   useEffect(() => {
     if (searchInput === urlQuery) return;
     const timer = setTimeout(() => updateParams({ q: searchInput || null }), SEARCH_DEBOUNCE_MS);
     return () => clearTimeout(timer);
-    // Intentionally excludes `updateParams`/`urlQuery`: re-running this
-    // effect on every render (updateParams is recreated each time) would
-    // restart the debounce on every keystroke-unrelated update. `updateParams`
-    // reads `searchParamsRef` (always current), so the pending write still
-    // merges onto the latest URL state even when this effect doesn't re-run.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchInput]);
 

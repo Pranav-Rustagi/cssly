@@ -116,9 +116,6 @@ export default async function ArtworkPage({ params }: ArtworkPageProps) {
                 showCloseButton
                 className="max-h-[90vh] max-w-[90vw] gap-0 overflow-auto border-none bg-transparent p-0 shadow-none ring-0 sm:max-w-[90vw]"
               >
-                {/* Visually hidden — required by the dialog primitive for
-                 * accessibility, but the fullscreen view itself shows
-                 * nothing but the artwork: no title, no site chrome. */}
                 <DialogTitle className="sr-only">{artwork.title} — fullscreen</DialogTitle>
                 <DialogDescription className="sr-only">
                   {artwork.description}

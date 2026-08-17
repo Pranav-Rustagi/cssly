@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
-// Server component: the form's client interactivity lives entirely in
-// ContactForm, so this page still prerenders statically.
 export default function ContactPage() {
   return (
     <Section spacing="compact">

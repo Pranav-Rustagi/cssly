@@ -13,8 +13,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/gallery" },
 };
 
-// Server component: reads no `searchParams`, so the route stays statically
-// prerenderable. All filter/sort state lives in the client and the URL.
 export default function GalleryPage() {
   const artworks = getAllArtworks();
   const tags = getAllTags();

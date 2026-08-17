@@ -11,9 +11,6 @@ export interface PipelineEntry {
   emoji: string;
 }
 
-// Status/difficulty colour is derived from semantic tokens only — accent for
-// the "further along" end of each scale, text-muted for the rest, and the
-// destructive token for "Hard" — never a stock Tailwind palette.
 const statusClass: Record<string, string> = {
   Done: "bg-accent-solid text-accent-solid-foreground",
   "In Progress": "bg-accent/10 text-accent",
@@ -30,9 +27,6 @@ interface PipelineCardProps {
   entry: PipelineEntry;
 }
 
-/** One card in the "In the works" pipeline list. Restores the reference's
- * media band: a gradient region with decorative blurred circles, the
- * artwork's emoji, and an absolutely-positioned status badge. */
 export function PipelineCard({ entry }: PipelineCardProps) {
   return (
     <div className="group flex h-full flex-col overflow-hidden rounded-xl border-2 border-accent/20 bg-bg-alt transition-all duration-300 hover:border-accent hover:shadow-2xl motion-safe:hover:-translate-y-3">

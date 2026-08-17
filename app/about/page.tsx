@@ -25,7 +25,6 @@ const socialLinks = [
   { href: "https://dev.to/pranav-rustagi", label: "Dev.to", icon: DevToIcon },
 ];
 
-// Server component: no hooks, state, or event handlers, so no "use client".
 export default function AboutPage() {
   return (
     <>

@@ -1,10 +1,6 @@
 import type { SVGProps } from "react";
 
-/** Single-colour brand marks, inlined so the footer needs no icon package
- * for three logos that never change. Path data sourced verbatim from
- * @thesvg/icons v3.3.0 (MIT) — dist/github.js, dist/linkedin.js,
- * dist/devto.js — with the baked-in brand-colour `fill` dropped so the
- * mark inherits `currentColor`, matching the lucide icons beside them. */
+/** Path data sourced from @thesvg/icons v3.3.0 (MIT) — dist/github.js, dist/linkedin.js, dist/devto.js. */
 
 export function GitHubIcon(props: SVGProps<SVGSVGElement>) {
   return (

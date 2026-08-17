@@ -7,15 +7,10 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 
 interface CopySourceButtonProps {
-  /** Raw file contents to copy — never the highlighted markup. */
   source: string;
-  /** What this button copies, for the button label and the toast (eg. "HTML"). */
   label: string;
 }
 
-/** Copies raw source to the clipboard, with a toast either way. Small and
- * client-only on purpose — the surrounding source viewer stays a server
- * component so the shiki highlighting costs zero client JS. */
 export function CopySourceButton({ source, label }: CopySourceButtonProps) {
   const [copied, setCopied] = useState(false);
 

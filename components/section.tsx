@@ -10,7 +10,6 @@ interface SectionProps {
   innerClassName?: string;
 }
 
-/** Full-bleed section wrapper with a centred, max-width inner container. */
 export function Section({
   children,
   type = "primary",

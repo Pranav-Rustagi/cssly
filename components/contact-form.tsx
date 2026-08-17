@@ -27,8 +27,6 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 type Status = "idle" | "sending" | "success" | "error";
 
-/** Client component: holds form state and sends via EmailJS directly, so
- * the site stays fully static with no API route in front of it. */
 export function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -46,7 +44,6 @@ export function ContactForm() {
       return;
     }
 
-    // Honeypot: a real form field bots fill in but humans never see.
     const honeypot = (event.currentTarget.elements.namedItem(
       "botcheck"
     ) as HTMLInputElement | null)?.value;
@@ -73,10 +70,6 @@ export function ContactForm() {
     setError(null);
 
     try {
-      // The existing EmailJS template only knows from_name/to_name/
-      // from_email/to_email/message — there's no slot for the Type
-      // select, so it's folded into the message body as a leading line
-      // rather than sent as a separate param the template would drop.
       const result = await emailjs.send(
         serviceId,
         templateId,
@@ -118,9 +111,6 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-      {/* Honeypot: visually hidden but present in the layout (not
-       * display:none, so unsophisticated bots still fill it in), and hidden
-       * from assistive tech since it's not a real field for humans. */}
       <div className="absolute h-0 w-0 overflow-hidden">
         <Label htmlFor="botcheck">Leave this field empty</Label>
         <Input

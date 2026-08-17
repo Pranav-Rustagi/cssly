@@ -9,11 +9,6 @@ export function generateStaticParams() {
   return getAllArtworks().map((artwork) => ({ slug: artwork.slug }));
 }
 
-/** No screenshot of the actual piece — that needs a headless browser at
- * build time, out of scope for now (see issue #19). This is a plain
- * title-card generated from the artwork's own title and description, using
- * satori's built-in default font only — no webfonts, consistent with the
- * rest of the site. */
 export default async function Image({
   params,
 }: {

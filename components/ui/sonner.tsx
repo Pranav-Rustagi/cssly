@@ -4,9 +4,6 @@ import * as React from "react"
 import { Toaster as Sonner, type ToasterProps } from "sonner"
 import { CircleCheckIcon, InfoIcon, TriangleAlertIcon, OctagonXIcon, Loader2Icon } from "lucide-react"
 
-// Reads the project's own `data-theme` attribute on <html> (set by the
-// blocking script in app/layout.tsx and toggled by components/theme-toggle).
-// This project has no theme-provider library mounted.
 function useDataTheme(): ToasterProps["theme"] {
   const [theme, setTheme] = React.useState<ToasterProps["theme"]>("system")
 

@@ -9,13 +9,6 @@ interface SourceViewerProps {
   css: string;
 }
 
-/** Shiki dual-theme output writes the light theme inline (`color`) and the
- * dark theme as a `--shiki-dark` custom property per token. That's built
- * for toggling via a `.dark` ancestor class — this project themes via
- * `[data-theme="dark"]` instead, so `app/globals.css` carries the override
- * that swaps to `--shiki-dark` there. Backgrounds are stripped (see
- * `[&_pre]` below) so the panel just uses the surrounding surface colour in
- * both themes. */
 async function highlight(code: string, lang: "html" | "css") {
   return codeToHtml(code, {
     lang,
@@ -23,9 +16,6 @@ async function highlight(code: string, lang: "html" | "css") {
   });
 }
 
-/** HTML/CSS source, tabbed and copyable. Highlighting runs here, in a server
- * component, at build time — the shiki output is static markup, so this
- * costs zero client JS beyond the small copy button. */
 export async function SourceViewer({ html, css }: SourceViewerProps) {
   const [htmlMarkup, cssMarkup] = await Promise.all([
     highlight(html, "html"),
