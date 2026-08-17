@@ -9,11 +9,6 @@ interface ArtworkCardProps {
   artwork: Artwork;
 }
 
-/** One artwork tile in the gallery grid. The whole card is a single link to
- * the detail page — the preview stays `pointer-events-none` so nothing
- * inside it can steal the click. Preview area is a fixed 16/10 box
- * (see `ArtworkFrame`'s "card" mode) so cards line up in a grid no matter
- * how differently shaped each artwork's own viewport is. */
 export function ArtworkCard({ artwork }: ArtworkCardProps) {
   return (
     <Card className="group/artwork-card [--card-spacing:--spacing(2)] overflow-hidden p-0 shadow-lg transition-all duration-300 hover:border-accent hover:shadow-xl motion-safe:hover:-translate-y-2 has-[a:focus-visible]:border-accent">

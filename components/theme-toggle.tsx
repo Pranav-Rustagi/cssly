@@ -26,8 +26,7 @@ export function ThemeToggle() {
     try {
       localStorage.setItem("theme", next);
     } catch {
-      // localStorage may be blocked (private mode, cookie policy); the
-      // attribute switch above still works for the current page load.
+      // localStorage may be blocked; the attribute switch above still applies.
     }
     setTheme(next);
   }
@@ -43,9 +42,6 @@ export function ThemeToggle() {
       suppressHydrationWarning
       className="flex size-10 shrink-0 items-center justify-center rounded-full bg-text text-bg cursor-pointer outline-none transition-all duration-300 hover:-rotate-30 focus-visible:ring-2 focus-visible:ring-accent"
     >
-      {/* Both icons render always; visibility is driven purely by the
-       * `dark:` variant (mapped to [data-theme=dark]) so there's no
-       * client/server mismatch from conditional icon rendering. */}
       <Moon className="size-5 dark:hidden" />
       <Sun className="hidden size-5 dark:block" />
     </button>

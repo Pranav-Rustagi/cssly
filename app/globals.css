@@ -5,14 +5,7 @@
 @config "../tailwind.config.ts";
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-/* Tailwind v4's built-in .container utility can't be overridden via
- * @utility (it only appends alongside the native rules); exclude it from
- * candidate scanning and define it as plain CSS instead: centred, capped at
- * 1400px. No media query needed — a block element is already full-width
- * below the cap. No horizontal padding here — callers that wrap children in
- * `Section` get it from `Section`'s own px utilities; callers that use
- * `.container` directly (header, footer) supply their own, so padding never
- * doubles up. */
+/* Tailwind v4's built-in .container utility can't be overridden via @utility, so it's excluded from scanning and defined as plain CSS below. */
 @source not inline("container");
 
 .container {
@@ -21,7 +14,6 @@
 }
 
 :root {
-  /* base palette — fixed, do not alter */
   --color-primary: #000000;
   --color-primary-2: #0F0F0F;
   --color-secondary: #1A1A1A;
@@ -31,12 +23,9 @@
   --color-light-2: #F9FAFB;
   --color-border-dark: #2A2A2A;
   --color-border-light: #E2E8F0;
-  /* addition beyond the original nine base colours: no base colour covers
-   * error/destructive states, so they get their own named tokens too */
   --color-danger: #dc2626;
   --color-danger-light: #f87171;
 
-  /* semantic layer — light theme */
   --color-bg: var(--color-light);
   --color-bg-alt: var(--color-light-2);
   --color-surface: var(--color-light);
@@ -46,12 +35,9 @@
   --color-accent: color-mix(in srgb, var(--color-decorative) 97%, black 3%);
   --color-accent-hover: color-mix(in srgb, var(--color-accent-solid) 92%, black 8%);
   --shadow-accent: 0 3px 10px rgb(99 102 241 / 0.3);
-  /* filled accent surfaces (buttons, solid badges) — 50/50 blend for consistent
-   * contrast across both light and dark themes */
   --color-accent-solid: color-mix(in srgb, var(--color-decorative) 50%, var(--color-decorative-light) 50%);
   --color-accent-solid-foreground: var(--color-light);
 
-  /* shadcn variable mapping — pointed at CSSly semantic tokens */
   --background: var(--color-bg);
   --foreground: var(--color-text);
   --card: var(--color-surface);
@@ -64,9 +50,6 @@
   --secondary-foreground: var(--color-text);
   --muted: var(--color-bg-alt);
   --muted-foreground: var(--color-text-muted);
-  /* subtle neutral hover/active background for shadcn primitives (menu
-   * items, select rows, …) — distinct from the brand accent, which
-   * CSSly's own bg-accent/text-accent read from --color-accent directly */
   --menu-accent: color-mix(in srgb, var(--color-surface) 92%, var(--color-text) 8%);
   --menu-accent-foreground: var(--color-text);
   --destructive: var(--color-danger);
@@ -81,7 +64,6 @@
 }
 
 [data-theme="dark"] {
-  /* semantic layer — dark theme */
   --color-bg: var(--color-primary);
   --color-bg-alt: var(--color-primary-2);
   --color-surface: var(--color-secondary);
@@ -91,11 +73,9 @@
   --color-accent: var(--color-decorative-light);
   --color-accent-hover: color-mix(in srgb, var(--color-accent-solid) 92%, black 8%);
   --shadow-accent: 0 3px 10px rgb(99 102 241 / 0.3);
-  /* lighter blend for consistent button contrast across themes */
   --color-accent-solid: color-mix(in srgb, var(--color-decorative) 50%, var(--color-decorative-light) 50%);
   --color-accent-solid-foreground: var(--color-light);
 
-  /* shadcn variable mapping — dark */
   --background: var(--color-bg);
   --foreground: var(--color-text);
   --card: var(--color-surface);
@@ -108,7 +88,6 @@
   --secondary-foreground: var(--color-text);
   --muted: var(--color-bg-alt);
   --muted-foreground: var(--color-text-muted);
-  /* subtle neutral hover/active background — lifted grey, not brand indigo */
   --menu-accent: color-mix(in srgb, var(--color-surface) 85%, var(--color-text) 15%);
   --menu-accent-foreground: var(--color-text);
   --destructive: var(--color-danger-light);
@@ -124,13 +103,7 @@
   }
 }
 
-/* Shiki's dual-theme output (see components/source-viewer.tsx) writes the
- * light theme as an inline `color`/`background-color` and the dark theme as
- * a `--shiki-dark`/`--shiki-dark-bg` custom property per token, meant to be
- * switched on by a `.dark` ancestor class. This project themes via
- * `[data-theme="dark"]`, not a `.dark` class, so the switch is keyed off
- * that attribute instead. Backgrounds are stripped via `!bg-transparent` in
- * the source viewer itself, so only text colour needs switching here. */
+/* Shiki's dark-theme tokens are keyed off a `.dark` ancestor class; this project themes via `[data-theme="dark"]` instead. */
 [data-theme="dark"] .shiki,
 [data-theme="dark"] .shiki span {
   color: var(--shiki-dark) !important;

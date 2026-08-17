@@ -9,7 +9,6 @@ interface FeatureCardProps {
   description: string;
 }
 
-/** One tile in the "How CSSly stands out" grid: icon, title, description. */
 export function FeatureCard({ icon: Icon, title, description }: FeatureCardProps) {
   return (
     <Card className="gap-0 p-8 shadow-md transition-all duration-300 hover:shadow-lg motion-safe:hover:-translate-y-2">

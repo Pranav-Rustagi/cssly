@@ -9,8 +9,6 @@ const quickLinks = [
   { href: "/contact", label: "Contact", icon: Mail },
 ];
 
-// lucide-react ships no brand/logo icons (removed upstream), so each
-// platform gets its real mark from components/brand-icons instead.
 const connectLinks = [
   { href: "https://github.com/Pranav-Rustagi", label: "GitHub", icon: GitHubIcon },
   {
@@ -26,10 +24,8 @@ const otherLinks = [
   { href: "/terms", label: "Terms of Service", icon: FileText },
 ];
 
-/** Server component footer: quick links, connect links, and a copyright bar.
- * External links open in a new tab with `rel="noreferrer"`. */
 export function SiteFooter() {
-  // Publication year — fixed literal, not computed at runtime, to prevent stale values after year boundary
+  // Literal year: computed values freeze at build time and go stale.
   const year = 2026;
 
   return (

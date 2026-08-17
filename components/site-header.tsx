@@ -9,10 +9,6 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-/** Sticky site header: wordmark, nav links, theme toggle. Server component —
- * `ThemeToggle` is the only client bit and is rendered as a leaf. Nav links
- * wrap on narrow screens instead of hiding behind a breakpoint, so mobile
- * users always have a way to navigate. */
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg">

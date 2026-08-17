@@ -1,21 +1,10 @@
 #!/usr/bin/env node
-// Validates every artwork folder under public/preview/. Zero dependencies,
-// Node built-ins only. Prints every failure found (does not stop at the
-// first one) and exits non-zero if any exist.
 
 import fs from "node:fs";
 import path from "node:path";
 
 const PREVIEW_DIR = path.join(process.cwd(), "public", "preview");
 const SLUG_RE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-// Matches explicit http(s) URLs anywhere, plus protocol-relative URLs
-// (`//host/path`) when they appear where a browser would actually resolve
-// them as a resource reference: `src="//..."`, `href="//..."`, `url(//...)`.
-// CSS/HTML both allow whitespace (including newlines) between the delimiter
-// and the value (`url( //x)`, `src = "//x"`), so the lookbehind allows
-// optional whitespace between the delimiter and the `//`.
-// The stop-char class excludes quotes/angles/parens so the match doesn't
-// swallow trailing markup.
 const URL_RE = /\bhttps?:\/\/[^\s"'<>)]+|(?<=["'(=]\s*)\/\/[^\s"'<>)]+/gi;
 
 const errors = [];
