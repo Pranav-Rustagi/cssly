@@ -15,6 +15,7 @@ const config: Config = {
         bg: "var(--color-bg)",
         "bg-alt": "var(--color-bg-alt)",
         surface: "var(--color-surface)",
+        footer: "var(--color-footer)",
         border: "var(--color-border)",
         text: "var(--color-text)",
         "text-muted": "var(--color-text-muted)",

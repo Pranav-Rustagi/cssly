@@ -29,6 +29,7 @@
   --color-bg: var(--color-light);
   --color-bg-alt: var(--color-light-2);
   --color-surface: var(--color-light);
+  --color-footer: var(--color-light-2);
   --color-border: var(--color-border-light);
   --color-text: var(--color-primary);
   --color-text-muted: color-mix(in srgb, var(--color-text) 55%, var(--color-bg) 45%);
@@ -67,6 +68,7 @@
   --color-bg: var(--color-primary);
   --color-bg-alt: var(--color-primary-2);
   --color-surface: var(--color-secondary);
+  --color-footer: var(--color-secondary);
   --color-border: var(--color-border-dark);
   --color-text: var(--color-light);
   --color-text-muted: color-mix(in srgb, var(--color-text) 55%, var(--color-bg) 45%);

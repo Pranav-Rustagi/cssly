@@ -28,7 +28,7 @@ const socialLinks = [
 export default function AboutPage() {
   return (
     <>
-      <Section spacing="compact">
+      <Section>
         <div className="flex flex-col gap-4">
           <Heading
             as="h1"
@@ -65,7 +65,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section type="secondary" spacing="compact">
+      <Section type="secondary">
         <div className="flex flex-col gap-4">
           <Heading
             as="h2"
@@ -94,7 +94,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section spacing="compact">
+      <Section>
         <div className="flex flex-col gap-4">
           <Heading as="h2" text="The Face behind" highlight={["Face"]} />
           <DescriptionText>
