@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { Section } from "@/components/section";
 import { Heading } from "@/components/heading";
@@ -22,7 +23,7 @@ export default function PrivacyPage() {
           build any profile of what you look at.
         </DescriptionText>
         <DescriptionText>
-          The one thing that does get stored is your light or dark theme
+          The one thing stored on your device is your light or dark theme
           choice, saved in your browser&apos;s <code>localStorage</code> under
           the key <code>theme</code>. That&apos;s it — it never leaves your
           device and it&apos;s never sent to me or anyone else.
@@ -60,13 +61,13 @@ export default function PrivacyPage() {
           Submitted messages land in my inbox and stay there — there&apos;s
           no set retention period, so assume it&apos;s kept indefinitely
           until I delete it myself. If you&apos;d rather I didn&apos;t keep
-          yours, email{" "}
-          <a
-            href="mailto:pranav001100@gmail.com"
+          yours, send a note through the{" "}
+          <Link
+            href="/contact"
             className="underline underline-offset-2 hover:text-accent"
           >
-            pranav001100@gmail.com
-          </a>{" "}
+            contact form
+          </Link>{" "}
           and I&apos;ll remove it.
         </DescriptionText>
 
