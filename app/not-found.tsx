@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Compass, Home } from "lucide-react";
+import { Compass } from "lucide-react";
 
 import { Section } from "@/components/section";
 import { Heading } from "@/components/heading";
@@ -23,16 +23,6 @@ export default function NotFound() {
             }
             nativeButton={false}
             variant="accent"
-            size="lg"
-          />
-          <Button
-            render={
-              <Link href="/">
-                <Home className="size-4" /> Home
-              </Link>
-            }
-            nativeButton={false}
-            variant="outline"
             size="lg"
           />
         </div>

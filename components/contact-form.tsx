@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import emailjs from "@emailjs/browser";
+import { Send } from "lucide-react";
 
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -110,7 +111,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-6 bg-surface border border-border rounded-2xl p-6 md:p-8 shadow-sm">
       <div className="absolute h-0 w-0 overflow-hidden">
         <Label htmlFor="botcheck">Leave this field empty</Label>
         <Input
@@ -123,7 +124,7 @@ export function ContactForm() {
         />
       </div>
 
-      <div className="flex flex-col gap-1.5">
+      <div className="flex flex-col gap-2">
         <Label htmlFor="name">Name</Label>
         <Input
           id="name"
@@ -135,7 +136,7 @@ export function ContactForm() {
         />
       </div>
 
-      <div className="flex flex-col gap-1.5">
+      <div className="flex flex-col gap-2">
         <Label htmlFor="email">Email</Label>
         <Input
           id="email"
@@ -148,7 +149,7 @@ export function ContactForm() {
         />
       </div>
 
-      <div className="flex flex-col gap-1.5">
+      <div className="flex flex-col gap-2">
         <Label htmlFor="type">Type</Label>
         <Select
           value={type}
@@ -168,7 +169,7 @@ export function ContactForm() {
         </Select>
       </div>
 
-      <div className="flex flex-col gap-1.5">
+      <div className="flex flex-col gap-2">
         <Label htmlFor="message">Message</Label>
         <Textarea
           id="message"
@@ -187,7 +188,8 @@ export function ContactForm() {
         </p>
       )}
 
-      <Button type="submit" variant="accent" size="lg" disabled={status === "sending"}>
+      <Button type="submit" variant="accent" size="lg" disabled={status === "sending"} className="w-full">
+        <Send className="size-4" aria-hidden="true" />
         {status === "sending" ? "Sending..." : "Send"}
       </Button>
     </form>

@@ -29,7 +29,7 @@ export function SiteFooter() {
   const year = 2026;
 
   return (
-    <footer className="border-t border-border bg-surface text-text">
+    <footer className="border-t border-border bg-footer text-text">
       <div className="container px-8 py-24 pb-8">
         <div className="flex flex-wrap gap-10 md:justify-around mb-10">
           <div>
