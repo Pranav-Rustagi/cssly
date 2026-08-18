@@ -33,15 +33,44 @@ export default function TermsPage() {
         <DescriptionText>
           You&apos;re free to reuse, remix and adapt any artwork here — even
           commercially — as long as you give appropriate credit to its
-          creator. That&apos;s the whole deal: attribution in, freedom to use
-          it out.
+          creator, link back to the licence, and note if you changed
+          anything. That&apos;s the whole deal: attribution in, freedom to
+          use it out.
         </DescriptionText>
+        <DescriptionText>
+          A working attribution looks like this:
+        </DescriptionText>
+        <pre className="overflow-x-auto rounded-lg border border-border bg-bg-alt p-4 text-sm text-text">
+          <code>
+            &quot;Aurora Veil&quot; by Pranav Rustagi, licensed under CC BY 4.0
+            (https://creativecommons.org/licenses/by/4.0/). Original:
+            https://cssly.vercel.app/art/aurora-veil
+          </code>
+        </pre>
 
         <Heading as="h2" text="Contributing" />
         <DescriptionText>
           If you submit an artwork to CSSly, you keep the copyright on it.
           Submitting means you&apos;re licensing it to everyone under CC BY
-          4.0, the same as the rest of the gallery.
+          4.0, the same as the rest of the gallery — and by submitting,
+          you&apos;re confirming it&apos;s your own original work and that
+          you actually have the right to license it. I take that on trust,
+          so please don&apos;t send me someone else&apos;s work.
+        </DescriptionText>
+        <DescriptionText>
+          One thing worth knowing before you submit: CC BY 4.0 can&apos;t be
+          taken back once it&apos;s granted, even if the piece is later
+          removed from the site. And I can remove any artwork from the
+          gallery at any time — for a rights complaint, or just because it
+          doesn&apos;t fit — though the licence already granted on it stands
+          either way.
+        </DescriptionText>
+
+        <Heading as="h2" text="No guarantees" />
+        <DescriptionText>
+          The site itself is provided as is — I can&apos;t promise it&apos;ll
+          always work or stay available, and I&apos;m not liable if
+          something breaks while you&apos;re using it.
         </DescriptionText>
       </div>
     </Section>

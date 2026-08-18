@@ -15,10 +15,17 @@ export default function PrivacyPage() {
     <Section>
       <div className="flex flex-col gap-4">
         <Heading as="h1" text="Privacy" highlight={["Privacy"]} />
+        <p className="text-sm text-text-muted">Last updated: 19 August 2026</p>
         <DescriptionText>
           CSSly is a fully static site. There&apos;s no analytics, no
-          cookies, no accounts, and no database — nothing here logs who
-          visits or what they look at.
+          cookies, no accounts, and no database — I don&apos;t track you or
+          build any profile of what you look at.
+        </DescriptionText>
+        <DescriptionText>
+          The one thing that does get stored is your light or dark theme
+          choice, saved in your browser&apos;s <code>localStorage</code> under
+          the key <code>theme</code>. That&apos;s it — it never leaves your
+          device and it&apos;s never sent to me or anyone else.
         </DescriptionText>
 
         <Heading as="h2" text="The contact form" />
@@ -46,8 +53,39 @@ export default function PrivacyPage() {
           >
             EmailJS&apos;s privacy policy
           </a>{" "}
-          for how they handle it. If you don&apos;t use the form, none of this
-          applies to you.
+          for how they handle it. If you don&apos;t use the contact form,
+          none of this section applies to you.
+        </DescriptionText>
+        <DescriptionText>
+          Submitted messages land in my inbox and stay there — there&apos;s
+          no set retention period, so assume it&apos;s kept indefinitely
+          until I delete it myself. If you&apos;d rather I didn&apos;t keep
+          yours, email{" "}
+          <a
+            href="mailto:pranav001100@gmail.com"
+            className="underline underline-offset-2 hover:text-accent"
+          >
+            pranav001100@gmail.com
+          </a>{" "}
+          and I&apos;ll remove it.
+        </DescriptionText>
+
+        <Heading as="h2" text="Hosting" />
+        <DescriptionText>
+          The site is hosted on{" "}
+          <a
+            href="https://vercel.com/legal/privacy-policy"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-2 hover:text-accent"
+          >
+            Vercel
+          </a>
+          , which keeps the usual server request logs — IP address,
+          timestamp, the URL asked for — as a side effect of serving the
+          page, on my behalf as the host I chose. I haven&apos;t added
+          anything on top of that logging and I don&apos;t go digging
+          through it.
         </DescriptionText>
 
         <Heading as="h2" text="The artworks" />
