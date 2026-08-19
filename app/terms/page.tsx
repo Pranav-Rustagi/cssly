@@ -38,13 +38,16 @@ export default function TermsPage() {
           use it out.
         </DescriptionText>
         <DescriptionText>
-          A working attribution looks like this:
+          A working attribution looks like this — keep that last sentence
+          only if you actually changed something, and drop it if you used the
+          piece as-is:
         </DescriptionText>
         <pre className="overflow-x-auto rounded-lg border border-border bg-bg-alt p-4 text-sm text-text">
           <code>
             &quot;Aurora Veil&quot; by Pranav Rustagi, licensed under CC BY 4.0
             (https://creativecommons.org/licenses/by/4.0/). Original:
-            https://cssly.vercel.app/art/aurora-veil
+            https://cssly.vercel.app/art/aurora-veil. Adapted from the
+            original.
           </code>
         </pre>
 
