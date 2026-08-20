@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <Section>
-      <div className="flex flex-col gap-12 md:gap-16">
+    <>
+      <Section>
         <div className="flex flex-col gap-4">
           <Heading as="h1" text="Terms" highlight={["Terms"]} />
           <DescriptionText>
@@ -21,7 +21,9 @@ export default function TermsPage() {
             so these terms are short on purpose.
           </DescriptionText>
         </div>
+      </Section>
 
+      <Section type="secondary">
         <div className="flex flex-col gap-4">
           <Heading as="h2" text="Code vs. artwork" />
           <DescriptionText>
@@ -32,7 +34,9 @@ export default function TermsPage() {
             <strong>CC BY 4.0</strong> (see <code>LICENSE-ARTWORKS</code>).
           </DescriptionText>
         </div>
+      </Section>
 
+      <Section>
         <div className="flex flex-col gap-4">
           <Heading as="h2" text="What CC BY 4.0 means" />
           <DescriptionText>
@@ -56,7 +60,9 @@ export default function TermsPage() {
             </code>
           </pre>
         </div>
+      </Section>
 
+      <Section type="secondary">
         <div className="flex flex-col gap-4">
           <Heading as="h2" text="Contributing" />
           <DescriptionText>
@@ -76,7 +82,9 @@ export default function TermsPage() {
             either way.
           </DescriptionText>
         </div>
+      </Section>
 
+      <Section>
         <div className="flex flex-col gap-4">
           <Heading as="h2" text="No guarantees" />
           <DescriptionText>
@@ -85,7 +93,7 @@ export default function TermsPage() {
             something breaks while you&apos;re using it.
           </DescriptionText>
         </div>
-      </div>
-    </Section>
+      </Section>
+    </>
   );
 }

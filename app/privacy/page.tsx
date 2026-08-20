@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <Section>
-      <div className="flex flex-col gap-12 md:gap-16">
+    <>
+      <Section>
         <div className="flex flex-col gap-4">
           <Heading as="h1" text="Privacy" highlight={["Privacy"]} />
           <p className="text-sm text-text-muted">Last updated: 19 August 2026</p>
@@ -30,7 +30,9 @@ export default function PrivacyPage() {
             device and it&apos;s never sent to me or anyone else.
           </DescriptionText>
         </div>
+      </Section>
 
+      <Section type="secondary">
         <div className="flex flex-col gap-4">
           <Heading as="h2" text="The contact form" />
           <DescriptionText>
@@ -74,7 +76,9 @@ export default function PrivacyPage() {
             and I&apos;ll remove it.
           </DescriptionText>
         </div>
+      </Section>
 
+      <Section>
         <div className="flex flex-col gap-4">
           <Heading as="h2" text="Hosting" />
           <DescriptionText>
@@ -94,7 +98,9 @@ export default function PrivacyPage() {
             through it.
           </DescriptionText>
         </div>
+      </Section>
 
+      <Section type="secondary">
         <div className="flex flex-col gap-4">
           <Heading as="h2" text="The artworks" />
           <DescriptionText>
@@ -103,7 +109,7 @@ export default function PrivacyPage() {
             third-party requests.
           </DescriptionText>
         </div>
-      </div>
-    </Section>
+      </Section>
+    </>
   );
 }
