@@ -59,9 +59,11 @@ export default function TermsPage() {
           <DescriptionText>
             The site&apos;s code is licensed under the{" "}
             <strong>MIT License</strong> (see <code>LICENSE</code> in the
-            repository). The artworks themselves are licensed separately
+            repository), which lets you use, modify and redistribute it —
+            including commercially — as long as you keep the copyright and
+            licence notice. The artworks themselves are licensed separately
             under <strong>CC BY 4.0</strong> (see{" "}
-            <code>LICENSE-ARTWORKS</code>).
+            <code>LICENSE-ARTWORKS</code>), covered below.
           </DescriptionText>
         </div>
 
@@ -110,7 +112,9 @@ export default function TermsPage() {
           </DescriptionText>
           <DescriptionText>
             CC BY 4.0 is irrevocable — once granted, it can&apos;t be
-            withdrawn later, even if the piece is removed from the site.
+            withdrawn later, even if the piece is removed from the site. And
+            since this is a curated gallery, I&apos;m not obliged to publish
+            everything that gets submitted.
           </DescriptionText>
         </div>
 

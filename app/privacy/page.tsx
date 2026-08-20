@@ -33,9 +33,9 @@ export default function PrivacyPage() {
             className="text-xl font-bold md:text-2xl lg:text-3xl"
           />
           <DescriptionText>
-            CSSly is a static personal gallery. There are no accounts, no
-            analytics, no advertising, no tracking, and no database — I
-            don&apos;t build a profile of who visits or what they look at.
+            CSSly is a personal gallery of HTML and CSS artworks. This policy
+            covers what happens to information when you browse the site and
+            when you send me a message.
           </DescriptionText>
         </div>
 
@@ -46,8 +46,10 @@ export default function PrivacyPage() {
             className="text-xl font-bold md:text-2xl lg:text-3xl"
           />
           <DescriptionText>
-            The site itself doesn&apos;t collect anything automatically. The
-            only information I receive is what someone chooses to submit
+            Nothing is collected automatically. There are no accounts, no
+            analytics, no advertising, no tracking pixels and no database —
+            I don&apos;t build a profile of who visits or what they look at.
+            The only information I ever receive is what you choose to submit
             through the contact form.
           </DescriptionText>
         </div>
@@ -96,7 +98,8 @@ export default function PrivacyPage() {
             >
               EmailJS
             </a>{" "}
-            delivers the contact form as an email to me. See{" "}
+            delivers the contact form as an email to me, so your message
+            passes through their systems on the way to my inbox. See{" "}
             <a
               href="https://www.emailjs.com/legal/privacy-policy/"
               target="_blank"
@@ -118,7 +121,17 @@ export default function PrivacyPage() {
             </a>{" "}
             hosts the site and keeps standard server request logs — IP
             address, timestamp, requested URL — as a byproduct of serving
-            pages, on my behalf as the hosting provider.
+            pages, on my behalf as the hosting provider. A mirror of the site
+            is also deployed on{" "}
+            <a
+              href="https://www.netlify.com/privacy/"
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-2 hover:text-accent"
+            >
+              Netlify
+            </a>
+            , which keeps equivalent logs for anything served from there.
           </DescriptionText>
           <DescriptionText>
             Every artwork renders in a sandboxed iframe served from this
