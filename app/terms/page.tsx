@@ -51,7 +51,7 @@ export default function TermsPage() {
             only if you actually changed something, and drop it if you used the
             piece as-is:
           </DescriptionText>
-          <pre className="whitespace-pre-wrap break-words rounded-lg border border-border bg-bg-alt p-4 text-sm text-text">
+          <pre className="whitespace-pre-wrap wrap-break-word rounded-lg border border-border bg-bg-alt p-4 text-sm text-text">
             <code>
               &quot;Aurora Veil&quot; by Pranav Rustagi, licensed under CC BY 4.0
               (https://creativecommons.org/licenses/by/4.0/). Original:
