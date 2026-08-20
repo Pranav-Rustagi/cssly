@@ -77,18 +77,22 @@ export default function TermsPage() {
             link back to the licence, and indicate if you made changes.
           </DescriptionText>
           <DescriptionText>
-            A working attribution looks like this — keep the last sentence
-            only if you actually changed something, and drop it if you used
-            the piece as-is:
+            It doesn&apos;t have to be long. Link the title to the piece and
+            the licence name to the licence, and that covers it:
           </DescriptionText>
           <pre className="whitespace-pre-wrap wrap-break-word rounded-lg border border-border bg-bg-alt p-4 text-sm text-text">
             <code>
-              &quot;Aurora Veil&quot; by Pranav Rustagi, licensed under CC BY 4.0
-              (https://creativecommons.org/licenses/by/4.0/). Original:
-              https://cssly.vercel.app/art/aurora-veil. Adapted from the
-              original.
+              {`<a href="https://cssly.vercel.app/art/aurora-veil">Aurora Veil</a> by Pranav Rustagi, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>`}
             </code>
           </pre>
+          <DescriptionText>
+            Add &quot;(modified)&quot; after the title if you changed it. In
+            plain text, where you can&apos;t link, write it as{" "}
+            <code>
+              &quot;Aurora Veil&quot; by Pranav Rustagi, CC BY 4.0
+            </code>{" "}
+            and include the two URLs nearby.
+          </DescriptionText>
         </div>
 
         <div className="flex flex-col gap-4">
