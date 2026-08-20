@@ -16,7 +16,7 @@ export default function PrivacyPage() {
     <>
       <Section>
         <div className="flex flex-col gap-4">
-          <Heading as="h1" text="Privacy" highlight={["Privacy"]} />
+          <Heading as="h1" text="Privacy" highlight={["Privacy"]} className="text-3xl font-bold md:text-4xl lg:text-5xl" />
           <p className="text-sm text-text-muted">Last updated: 19 August 2026</p>
           <DescriptionText>
             CSSly is a fully static site. There&apos;s no analytics, no
@@ -34,7 +34,7 @@ export default function PrivacyPage() {
 
       <Section type="secondary">
         <div className="flex flex-col gap-4">
-          <Heading as="h2" text="The contact form" />
+          <Heading as="h2" text="The contact form" className="text-xl font-bold md:text-2xl lg:text-3xl" />
           <DescriptionText>
             The one exception is the <strong>contact form</strong>. When you
             submit it, your name, email address and message — with the
@@ -80,7 +80,7 @@ export default function PrivacyPage() {
 
       <Section>
         <div className="flex flex-col gap-4">
-          <Heading as="h2" text="Hosting" />
+          <Heading as="h2" text="Hosting" className="text-xl font-bold md:text-2xl lg:text-3xl" />
           <DescriptionText>
             The site is hosted on{" "}
             <a
@@ -102,7 +102,7 @@ export default function PrivacyPage() {
 
       <Section type="secondary">
         <div className="flex flex-col gap-4">
-          <Heading as="h2" text="The artworks" />
+          <Heading as="h2" text="The artworks" className="text-xl font-bold md:text-2xl lg:text-3xl" />
           <DescriptionText>
             Every artwork renders in a sandboxed iframe served straight from
             this repo. Browsing the gallery doesn&apos;t trigger any

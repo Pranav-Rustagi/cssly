@@ -15,7 +15,7 @@ export default function TermsPage() {
     <>
       <Section>
         <div className="flex flex-col gap-4">
-          <Heading as="h1" text="Terms" highlight={["Terms"]} />
+          <Heading as="h1" text="Terms" highlight={["Terms"]} className="text-3xl font-bold md:text-4xl lg:text-5xl" />
           <DescriptionText>
             CSSly is a personal art gallery, not a product with a legal team —
             so these terms are short on purpose.
@@ -25,7 +25,7 @@ export default function TermsPage() {
 
       <Section type="secondary">
         <div className="flex flex-col gap-4">
-          <Heading as="h2" text="Code vs. artwork" />
+          <Heading as="h2" text="Code vs. artwork" className="text-xl font-bold md:text-2xl lg:text-3xl" />
           <DescriptionText>
             The site&apos;s code is licensed under the{" "}
             <strong>MIT licence</strong> (see{" "}
@@ -38,7 +38,7 @@ export default function TermsPage() {
 
       <Section>
         <div className="flex flex-col gap-4">
-          <Heading as="h2" text="What CC BY 4.0 means" />
+          <Heading as="h2" text="What CC BY 4.0 means" className="text-xl font-bold md:text-2xl lg:text-3xl" />
           <DescriptionText>
             You&apos;re free to reuse, remix and adapt any artwork here — even
             commercially — as long as you give appropriate credit to its
@@ -51,7 +51,7 @@ export default function TermsPage() {
             only if you actually changed something, and drop it if you used the
             piece as-is:
           </DescriptionText>
-          <pre className="overflow-x-auto rounded-lg border border-border bg-bg-alt p-4 text-sm text-text">
+          <pre className="whitespace-pre-wrap break-words rounded-lg border border-border bg-bg-alt p-4 text-sm text-text">
             <code>
               &quot;Aurora Veil&quot; by Pranav Rustagi, licensed under CC BY 4.0
               (https://creativecommons.org/licenses/by/4.0/). Original:
@@ -64,7 +64,7 @@ export default function TermsPage() {
 
       <Section type="secondary">
         <div className="flex flex-col gap-4">
-          <Heading as="h2" text="Contributing" />
+          <Heading as="h2" text="Contributing" className="text-xl font-bold md:text-2xl lg:text-3xl" />
           <DescriptionText>
             If you submit an artwork to CSSly, you keep the copyright on it.
             Submitting means you&apos;re licensing it to everyone under CC BY
@@ -86,7 +86,7 @@ export default function TermsPage() {
 
       <Section>
         <div className="flex flex-col gap-4">
-          <Heading as="h2" text="No guarantees" />
+          <Heading as="h2" text="No guarantees" className="text-xl font-bold md:text-2xl lg:text-3xl" />
           <DescriptionText>
             The site itself is provided as is — I can&apos;t promise it&apos;ll
             always work or stay available, and I&apos;m not liable if
