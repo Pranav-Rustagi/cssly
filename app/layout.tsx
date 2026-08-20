@@ -6,10 +6,25 @@ import { THEME_COLOR_META_ID, THEME_COLORS } from "@/lib/theme";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
+const title = "CSSly | Pure HTML & CSS Designs";
+const description =
+  "A collection of beautiful, responsive, and accessible web designs built using only HTML and CSS. Perfect for inspiration and learning.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://cssly.vercel.app"),
-  title: "cssly",
-  description: "cssly",
+  title,
+  description,
+  openGraph: {
+    type: "website",
+    siteName: "CSSly",
+    title,
+    description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
 const themeInitScript = `(function(){var t=null;try{t=localStorage.getItem("theme");}catch(e){}if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);var m=document.getElementById("${THEME_COLOR_META_ID}");if(m)m.setAttribute("content",t==="dark"?"${THEME_COLORS.dark}":"${THEME_COLORS.light}");})();`;
