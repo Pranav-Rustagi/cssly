@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <>
-      <Section>
+    <Section>
+      <div className="flex flex-col gap-16 md:gap-20">
         <div className="flex flex-col gap-4">
           <Heading as="h1" text="Privacy" highlight={["Privacy"]} className="text-3xl font-bold md:text-4xl lg:text-5xl" />
           <p className="text-sm text-text-muted">Last updated: 19 August 2026</p>
@@ -30,9 +30,7 @@ export default function PrivacyPage() {
             device and it&apos;s never sent to me or anyone else.
           </DescriptionText>
         </div>
-      </Section>
 
-      <Section type="secondary">
         <div className="flex flex-col gap-4">
           <Heading as="h2" text="The contact form" className="text-xl font-bold md:text-2xl lg:text-3xl" />
           <DescriptionText>
@@ -76,9 +74,7 @@ export default function PrivacyPage() {
             and I&apos;ll remove it.
           </DescriptionText>
         </div>
-      </Section>
 
-      <Section>
         <div className="flex flex-col gap-4">
           <Heading as="h2" text="Hosting" className="text-xl font-bold md:text-2xl lg:text-3xl" />
           <DescriptionText>
@@ -98,9 +94,7 @@ export default function PrivacyPage() {
             through it.
           </DescriptionText>
         </div>
-      </Section>
 
-      <Section type="secondary">
         <div className="flex flex-col gap-4">
           <Heading as="h2" text="The artworks" className="text-xl font-bold md:text-2xl lg:text-3xl" />
           <DescriptionText>
@@ -109,7 +103,7 @@ export default function PrivacyPage() {
             third-party requests.
           </DescriptionText>
         </div>
-      </Section>
-    </>
+      </div>
+    </Section>
   );
 }
