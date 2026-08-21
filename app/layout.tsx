@@ -3,6 +3,7 @@ import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import { THEME_COLOR_META_ID, THEME_COLORS } from "@/lib/theme";
+import { SITE_URL } from "@/lib/site";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
@@ -11,12 +12,13 @@ const description =
   "A collection of beautiful, responsive, and accessible web designs built using only HTML and CSS. Perfect for inspiration and learning.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://cssly.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title,
   description,
   openGraph: {
     type: "website",
     siteName: "CSSly",
+    url: "/",
     title,
     description,
   },

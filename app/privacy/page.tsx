@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
+import { pageMetadata } from "@/lib/site";
 import { Section } from "@/components/section";
 import { Heading } from "@/components/heading";
 import { DescriptionText } from "@/components/text";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Privacy Policy — CSSly",
   description:
     "How CSSly handles data: what's collected through the contact form, what's stored locally, and which third-party services are involved.",
-  alternates: { canonical: "/privacy" },
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

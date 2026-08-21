@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
 
+import { pageMetadata } from "@/lib/site";
 import { Section } from "@/components/section";
 import { Heading } from "@/components/heading";
 import { DescriptionText } from "@/components/text";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Terms of Service — CSSly",
   description:
     "The terms covering use of CSSly's code and artworks, including the CC BY 4.0 licence and attribution requirements.",
-  alternates: { canonical: "/terms" },
-};
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (

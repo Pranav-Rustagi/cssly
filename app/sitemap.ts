@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
 
+import { SITE_URL } from "@/lib/site";
+
 import { getAllArtworks } from "@/lib/artworks";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cssly.vercel.app";
+const BASE_URL = SITE_URL;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [

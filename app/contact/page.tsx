@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/site";
 
 import { Section } from "@/components/section";
 import { Heading } from "@/components/heading";
 import { DescriptionText } from "@/components/text";
 import { ContactForm } from "@/components/contact-form";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Contact — cssly",
-  description: "Request a design, share a project, or say hello.",
-  alternates: { canonical: "/contact" },
-};
+  description:
+    "Request a design, share a project, or say hello.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (
