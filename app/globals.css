@@ -33,10 +33,15 @@
   --color-border: var(--color-border-light);
   --color-text: var(--color-primary);
   --color-text-muted: color-mix(in srgb, var(--color-text) 55%, var(--color-bg) 45%);
-  --color-accent: color-mix(in srgb, var(--color-decorative) 97%, black 3%);
+  /* Darkened from color-mix(decorative 97%, black 3%) (~#6063EA, 4.47:1 with white, fails
+     against the lighter --bg-alt/tint backgrounds it's also used on) to clear WCAG AA 4.5:1
+     as body text everywhere it's used — see accessibility PR for the ratios. */
+  --color-accent: #5254D4;
   --color-accent-hover: color-mix(in srgb, var(--color-accent-solid) 92%, black 8%);
   --shadow-accent: 0 3px 10px rgb(99 102 241 / 0.3);
-  --color-accent-solid: color-mix(in srgb, var(--color-decorative) 50%, var(--color-decorative-light) 50%);
+  /* Darkened from color-mix(decorative 50%, decorative-light 50%) (#8081F8, 3.26:1 with white)
+     to meet WCAG AA 4.5:1 for the white button label — see accessibility PR for the ratio. */
+  --color-accent-solid: #5F62E8;
   --color-accent-solid-foreground: var(--color-light);
 
   --background: var(--color-bg);
@@ -75,7 +80,7 @@
   --color-accent: var(--color-decorative-light);
   --color-accent-hover: color-mix(in srgb, var(--color-accent-solid) 92%, black 8%);
   --shadow-accent: 0 3px 10px rgb(99 102 241 / 0.3);
-  --color-accent-solid: color-mix(in srgb, var(--color-decorative) 50%, var(--color-decorative-light) 50%);
+  --color-accent-solid: #5F62E8;
   --color-accent-solid-foreground: var(--color-light);
 
   --background: var(--color-bg);
