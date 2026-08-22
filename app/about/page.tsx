@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/site";
 
 import { Section } from "@/components/section";
 import { Heading } from "@/components/heading";
 import { DescriptionText } from "@/components/text";
 import { GitHubIcon, LinkedInIcon, DevToIcon } from "@/components/brand-icons";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "About — cssly",
-  description: "The story behind cssly and the person building it.",
-  alternates: { canonical: "/about" },
-};
+  description:
+    "The story behind cssly and the person building it.",
+  path: "/about",
+});
 
 const socialLinks = [
   {
