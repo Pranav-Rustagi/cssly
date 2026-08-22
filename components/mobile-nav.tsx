@@ -7,7 +7,6 @@ import { Menu } from "lucide-react";
 import {
   Sheet,
   SheetContent,
-  SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
@@ -35,9 +34,7 @@ export function MobileNav({ links }: MobileNavProps) {
         <Menu className="size-5" />
       </SheetTrigger>
       <SheetContent side="right">
-        <SheetHeader>
-          <SheetTitle>Navigation</SheetTitle>
-        </SheetHeader>
+        <SheetTitle className="sr-only">Navigation</SheetTitle>
         <nav className="flex flex-col gap-1 px-4" aria-label="Main navigation">
           {links.map((link) => (
             <Link
