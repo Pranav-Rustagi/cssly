@@ -10,7 +10,9 @@ Every artwork must be **HTML and CSS only**:
 - No images (no `<img>`, no `background-image: url(...)` pointing at a file).
 - No external assets or CDN links — no `https://`, `http://`, or protocol-relative (`//`) URLs anywhere in your `index.html` or `style.css`. Everything the piece needs must be self-contained.
 
-These rules are enforced by `npm run validate:art`, which also runs automatically as the first step of `npm run build`. If your PR breaks one of them, the build fails before anyone reviews it — so run the validator yourself before opening the PR.
+`npm run validate:art` enforces most of this, and runs automatically as the first step of `npm run build` — so a PR with a `<script>` tag or an external URL fails before anyone reviews it. Run it yourself before opening the PR.
+
+One thing it can't catch: a local file committed alongside your artwork and referenced relatively (`./texture.png`). That's checked by hand at review, so please don't — the three files listed below are all a piece should need.
 
 ## Folder shape
 
