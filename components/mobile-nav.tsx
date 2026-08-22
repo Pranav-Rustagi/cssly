@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, Images, Info, Mail, Lock, FileText } from "lucide-react";
@@ -27,7 +26,7 @@ const secondaryLinks = [
 ];
 
 const linkBase =
-  "inline-flex items-center gap-2 font-medium text-text outline-none transition-colors hover:text-accent focus-visible:ring-2 focus-visible:ring-accent";
+  "flex items-center gap-2 font-medium text-text outline-none transition-colors hover:text-accent focus-visible:ring-2 focus-visible:ring-accent";
 
 interface MobileNavProps {
   links: { href: string; label: string }[];
@@ -52,12 +51,9 @@ export function MobileNav({ links }: MobileNavProps) {
         <Menu className="size-5" />
       </SheetTrigger>
       <SheetContent side="right" className="border-border bg-bg text-text">
-        <SheetTitle className="sr-only">Navigation</SheetTitle>
-
-        <div className="flex items-center gap-2 border-b border-border px-6 py-5 font-mono text-3xl font-bold text-accent">
-          <Image src="/logo.png" alt="" width={40} height={40} />
-          CSSly
-        </div>
+        <SheetTitle className="border-b border-border px-6 py-5 text-lg font-bold text-text md:text-xl">
+          Menu
+        </SheetTitle>
 
         <nav
           className="flex flex-col gap-5 px-6 py-6"
