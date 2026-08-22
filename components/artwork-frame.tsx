@@ -75,6 +75,10 @@ export function ArtworkFrame({
         title={title}
         width={width}
         height={height}
+        // Sandboxed with no scripts/forms, so nothing inside is ever operable — keep it
+        // out of the tab order instead of landing focus on a dead stop (and, inside the
+        // fullscreen dialog, letting it steal focus out of the dialog's focus trap).
+        tabIndex={-1}
         onLoad={() => setLoaded(true)}
         className={cn(
           "border-0",
