@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 // Trailing slashes are stripped so `${SITE_URL}/path` can never produce a
 // double slash, whatever shape the env var is set to.
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://cssly.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL || "https://cssly.vercel.app"
 ).replace(/\/+$/, "");
 
 interface PageMetadataOptions {
