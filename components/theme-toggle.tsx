@@ -26,7 +26,6 @@ export function ThemeToggle() {
     try {
       localStorage.setItem("theme", next);
     } catch {
-      // localStorage may be blocked; the attribute switch above still applies.
     }
     setTheme(next);
   }

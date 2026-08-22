@@ -35,7 +35,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <head>
-        {/* Must precede the init script below, which looks it up by id. */}
         <meta
           id={THEME_COLOR_META_ID}
           name="theme-color"

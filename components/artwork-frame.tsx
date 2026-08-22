@@ -12,7 +12,6 @@ interface ArtworkFrameProps {
   className?: string;
 }
 
-// scale(calc(100cqw / width)) is invalid CSS (calc can't divide a length into a number) and resolves to `none`, so the scale factor is computed in JS via ResizeObserver instead.
 export function ArtworkFrame({
   slug,
   title,
@@ -75,9 +74,6 @@ export function ArtworkFrame({
         title={title}
         width={width}
         height={height}
-        // Sandboxed with no scripts/forms, so nothing inside is ever operable — keep it
-        // out of the tab order instead of landing focus on a dead stop (and, inside the
-        // fullscreen dialog, letting it steal focus out of the dialog's focus trap).
         tabIndex={-1}
         onLoad={() => setLoaded(true)}
         className={cn(
