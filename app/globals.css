@@ -115,3 +115,18 @@
 [data-theme="dark"] .shiki span {
   color: var(--shiki-dark) !important;
 }
+
+/* Respect prefers-reduced-motion for the site's own chrome (hover lifts, transitions,
+   skeleton pulse, theme-toggle rotate, etc). The artworks render in sandboxed iframes —
+   separate documents this stylesheet can't reach — so they're unaffected, which matches
+   the brief: animation is the artwork's medium and stays exempt. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
