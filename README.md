@@ -1,40 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CSSly
 
-## Getting Started
+A gallery of artwork built purely in HTML and CSS — no JavaScript, no images, no external assets. Every piece runs live in the browser, straight from its source.
 
-Requires Node.js 20.9+ (see `.nvmrc`).
+## Running locally
 
-First, run the development server:
+Requires Node.js 20.9+ (`.nvmrc` pins 22).
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-## Learn More
+| Script | What it does |
+| --- | --- |
+| `npm run dev` | Starts the dev server |
+| `npm run build` | Runs `validate:art`, then builds for production — a malformed artwork fails the build |
+| `npm run start` | Serves the production build |
+| `npm run lint` | Runs ESLint |
+| `npm run validate:art` | Checks every artwork in `public/preview/` against the rules in `scripts/validate-artworks.mjs` |
 
-To learn more about Next.js, take a look at the following resources:
+## Project layout
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/` — Next.js App Router pages and routes (gallery, artwork pages, about, contact, terms, privacy)
+- `components/` — shared UI, including `ArtworkFrame`, the sandboxed iframe that renders each piece
+- `lib/` — artwork loading (`artworks.ts`), shared types (`types.ts`), site config (`site.ts`)
+- `public/preview/<slug>/` — one folder per artwork: `meta.json`, `index.html`, `style.css`
+- `scripts/validate-artworks.mjs` — the artwork validator that `build` runs first
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## How artworks work
 
-## Deploy on Vercel
+Each artwork lives in its own folder under `public/preview/<slug>/`. Its gallery page is served at `/art/<slug>`, and the raw files are reachable directly at `/preview/<slug>/`. The artwork is rendered inside a sandboxed `<iframe>` (`components/artwork-frame.tsx`), so its CSS can never leak into the rest of the site.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Want to add one? See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+Deployed on Vercel, with a Netlify mirror. `NEXT_PUBLIC_SITE_URL` (see `.env.example`) drives `metadataBase`, the sitemap (`app/sitemap.ts`) and `robots.txt` (`app/robots.ts`) — set it to the site's public origin.
 
 ## Licence
 
-The site code (the Next app, `components/`, `lib/`, `scripts/`, and config) is licensed under MIT — see `LICENSE`. The artworks in `public/preview/**` are licensed separately under CC BY 4.0 — see `LICENSE-ARTWORKS`.
+- Code: [MIT](./LICENSE)
+- Artworks (`public/preview/**`): [CC BY 4.0](./LICENSE-ARTWORKS)
