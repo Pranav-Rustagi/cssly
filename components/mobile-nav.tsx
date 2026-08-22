@@ -26,7 +26,7 @@ const secondaryLinks = [
 ];
 
 const linkBase =
-  "flex items-center gap-2 font-medium text-text outline-none transition-colors hover:text-accent focus-visible:ring-2 focus-visible:ring-accent";
+  "flex items-center gap-2 text-sm font-medium text-accent outline-none transition-colors focus-visible:ring-2 focus-visible:ring-accent";
 
 interface MobileNavProps {
   links: { href: string; label: string }[];
@@ -67,8 +67,8 @@ export function MobileNav({ links }: MobileNavProps) {
                 href={link.href}
                 onClick={() => setOpen(false)}
                 aria-current={pathname === link.href ? "page" : undefined}
-                className={`${linkBase} text-base ${
-                  pathname === link.href ? "text-accent" : ""
+                className={`${linkBase} ${
+                  pathname === link.href ? "font-semibold" : ""
                 }`}
               >
                 {Icon ? <Icon className="size-4" /> : null}
@@ -88,8 +88,8 @@ export function MobileNav({ links }: MobileNavProps) {
               href={link.href}
               onClick={() => setOpen(false)}
               aria-current={pathname === link.href ? "page" : undefined}
-              className={`${linkBase} text-sm ${
-                pathname === link.href ? "text-accent" : ""
+              className={`${linkBase} ${
+                pathname === link.href ? "font-semibold" : ""
               }`}
             >
               <link.icon className="size-4" />
