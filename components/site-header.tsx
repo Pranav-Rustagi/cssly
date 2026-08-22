@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { ThemeToggle } from "@/components/theme-toggle";
+import { MobileNav } from "@/components/mobile-nav";
 
 const navLinks = [
   { href: "/gallery", label: "Gallery" },
@@ -20,8 +21,11 @@ export function SiteHeader() {
           <Image src="/logo.png" alt="" width={40} height={40} priority />
           CSSly
         </Link>
-        <div className="flex flex-1 flex-wrap items-center justify-end gap-4 md:gap-8">
-          <nav className="flex flex-wrap items-center gap-4 md:gap-8" aria-label="Main navigation">
+        <div className="flex flex-1 items-center justify-end gap-4 md:gap-8">
+          <nav
+            className="hidden flex-wrap items-center gap-4 md:flex md:gap-8"
+            aria-label="Main navigation"
+          >
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -33,6 +37,7 @@ export function SiteHeader() {
             ))}
           </nav>
           <ThemeToggle />
+          <MobileNav links={navLinks} />
         </div>
       </div>
     </header>

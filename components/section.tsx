@@ -26,7 +26,7 @@ export function Section({
         "w-full overflow-x-hidden text-text",
         type === "secondary" ? "bg-bg-alt" : "bg-bg",
         verticalPadding,
-        "px-6 md:px-24 lg:px-48",
+        "px-6 md:px-24 lg:px-32 xl:px-48",
         className
       )}
     >
