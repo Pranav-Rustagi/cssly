@@ -25,7 +25,6 @@ const otherLinks = [
 ];
 
 export function SiteFooter() {
-  // Literal year: computed values freeze at build time and go stale.
   const year = 2026;
 
   return (

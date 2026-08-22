@@ -45,7 +45,6 @@ export function GalleryGrid({ artworks, tags }: GalleryGridProps) {
     ? (rawSort as SortOrder)
     : "newest";
 
-  // The debounced URL write reads this ref instead of the closed-over `searchParams` so it merges onto the latest URL state rather than a stale one.
   const searchParamsRef = useRef(searchParams);
   searchParamsRef.current = searchParams;
 
